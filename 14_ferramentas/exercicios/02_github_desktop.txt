@@ -1,0 +1,64 @@
+# Exercício 02 — GitHub Desktop
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Usar o GitHub Desktop para operações Git visuais.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer uma alternativa visual ao terminal para Git.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Instalar GitHub Desktop
+Baixe em https://desktop.github.com
+
+### Passo 2: Fazer login
+Use sua conta GitHub.
+
+### Passo 3: Clonar repositório
+1. File → Clone Repository
+2. Escolha um repositório da sua conta
+3. Local de clone: escolha uma pasta
+
+### Passo 4: Criar branch
+1. Clique em "Current Branch"
+2. "New Branch"
+3. Nome: "feature-teste"
+
+### Passo 5: Fazer commit
+1. Edite um arquivo
+2. Veja as mudanças no GitHub Desktop
+3. Digite mensagem
+4. Clique em "Commit to feature-teste"
+
+### Passo 6: Push
+1. Clique em "Push origin"
+2. Crie PR no GitHub
+
+### Passo 7: Documentar
+Crie `desktop_usado.txt`:
+```
+GitHub Desktop instalado: sim/não
+Repositório clonado: [nome]
+Branch criada: feature-teste
+Commit realizado: sim/não
+Push realizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O GitHub Desktop foi instalado? ✅
+2. Consegue clonar repositórios? ✅
+3. Consegue criar branches? ✅
+4. O diff é visual? ✅

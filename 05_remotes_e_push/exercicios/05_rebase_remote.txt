@@ -1,0 +1,67 @@
+# Exercício 05 — Rebase com Remote
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Usar rebase para manter o histórico limpo ao sincronizar com o remote.
+
+---
+
+## 🎯 Objetivo
+
+Entender quando e como usar `git pull --rebase` para evitar commits de merge desnecessários.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário de divergência
+```bash
+mkdir rebase-remote
+cd rebase-remote
+git init
+
+echo "Base" > app.txt
+git add . && git commit -m "Commit base"
+git remote add origin https://github.com/SEU-USUARIO/rebase-remote.git
+git push -u origin main
+```
+
+### Passo 2: Fazer mudança local
+```bash
+echo "Minha mudança local" >> app.txt
+git add . && git commit -m "Mudança local"
+```
+
+### Passo 3: Fazer mudança no remote (via GitHub)
+Edite o README.md no GitHub e faça commit.
+
+### Passo 4: Pull com rebase
+```bash
+git pull --rebase origin main
+git log --oneline
+```
+
+### Passo 5: Comparar com merge
+```bash
+git log --oneline --graph
+```
+
+### Passo 6: Documentar
+Crie `rebase_resultado.txt`:
+```
+Commits locais antes do rebase: [número]
+Commits remotos: [número]
+Histórico final: [linear ou com merge commit]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O rebase manteve o histórico linear? ✅
+2. Não houve commit de merge? ✅
+3. Os commits locais ficam "em cima" dos remotos? ✅

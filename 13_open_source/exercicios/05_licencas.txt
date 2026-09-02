@@ -1,0 +1,56 @@
+# Exercício 05 — Licenças
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Entender os diferentes tipos de licenças open source e escolher a adequada.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer as licenças mais comuns e seus impactos.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Pesquisar licenças
+Visite https://choosealicense.com
+
+### Passo 2: Criar tabela comparativa
+Crie `licencas.txt`:
+```
+=== LICENÇAS OPEN SOURCE ===
+
+| Licença | Uso | Restrições | Popular |
+|---------|-----|------------|---------|
+| MIT | [descrição] | [restrições] | [sim/não] |
+| Apache 2.0 | [descrição] | [restrições] | [sim/não] |
+| GPL v3 | [descrição] | [restrições] | [sim/não] |
+| BSD | [descrição] | [restrições] | [sim/não] |
+
+MIT: [quando usar]
+Apache 2.0: [quando usar]
+GPL v3: [quando usar]
+BSD: [quando usar]
+
+Para este projeto, recomendo: [licença] porque [motivo]
+```
+
+### Passo 3: Adicionar licença ao projeto
+```bash
+# Pode usar GitHub CLI
+gh api repos/{owner}/{repo} -X PUT -f license_template="mit"
+```
+
+---
+
+## 🔍 Verificação
+
+1. Você entende a diferença entre licenças? ✅
+2. Criou a tabela comparativa? ✅
+3. Escolheu a licença para o projeto? ✅

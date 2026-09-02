@@ -1,0 +1,70 @@
+# Exercício 02 — Mudar de Branch
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Praticar alternar entre branches usando `git checkout` e `git switch`.
+
+---
+
+## 🎯 Objetivo
+
+Entender como alternar branches afeta os arquivos no diretório de trabalho.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir branch-switch
+cd branch-switch
+git init
+
+echo "v1 do arquivo" > arquivo.txt
+git add . && git commit -m "Versão v1"
+```
+
+### Passo 2: Criar branch e modificar
+```bash
+git checkout -b feature
+echo "v2 - feature" > arquivo.txt
+git add . && git commit -m "Versão v2 na feature"
+```
+
+### Passo 3: Voltar para main e verificar
+```bash
+git checkout main
+cat arquivo.txt   # Deve mostrar "v1 do arquivo"
+```
+
+### Passo 4: Usar git switch (forma moderna)
+```bash
+git switch feature
+cat arquivo.txt   # Deve mostrar "v2 - feature"
+
+git switch main
+cat arquivo.txt   # Deve mostrar "v1 do arquivo"
+```
+
+### Passo 5: Documentar
+Crie `branch_switch.txt`:
+```
+Conteúdo no main: v1 do arquivo
+Conteúdo na feature: v2 - feature
+git checkout: [funcionou?]
+git switch: [funcionou?]
+Os arquivos mudaram ao trocar de branch: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Ao trocar de branch, o conteúdo do arquivo mudou? ✅
+2. `git checkout` funciona? ✅
+3. `git switch` funciona? ✅
+4. Cada branch tem sua própria versão? ✅

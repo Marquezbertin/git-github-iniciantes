@@ -1,0 +1,97 @@
+# Exercício 02 — CI com Testes
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um workflow que roda testes automaticamente a cada push.
+
+---
+
+## 🎯 Objetivo
+
+Configurar CI para validar código antes de integrar.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar projeto Node.js simples
+```bash
+mkdir ci-testes
+cd ci-testes
+npm init -y
+```
+
+### Passo 2: Criar teste simples
+```bash
+cat > teste.js << 'EOF'
+function somar(a, b) {
+    return a + b;
+}
+
+function testeSomar() {
+    const resultado = somar(2, 3);
+    if (resultado !== 5) {
+        throw new Error(`Esperado 5, obtido ${resultado}`);
+    }
+    console.log("Teste passou!");
+}
+
+testeSomar();
+EOF
+```
+
+### Passo 3: Criar workflow de CI
+```yaml
+# .github/workflows/ci.yml
+name: CI - Testes
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Rodar testes
+        run: node teste.js
+```
+
+### Passo 4: Commit e push
+```bash
+git add .
+git commit -m "CI: workflow de testes"
+git push
+```
+
+### Passo 5: Documentar
+Crie `ci_config.txt`:
+```
+Workflow: CI - Testes
+Trigger: push (main, develop), PR (main)
+Runner: ubuntu-latest
+Node version: 20
+Testes: teste.js
+Status: [sucesso/erro]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O workflow roda a cada push? ✅
+2. O teste é executado? ✅
+3. Se o teste falhar, o workflow falha? ✅

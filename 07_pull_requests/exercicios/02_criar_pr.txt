@@ -1,0 +1,61 @@
+# Exercício 02 — Criar Pull Request
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar uma branch, fazer mudanças e abrir um Pull Request no GitHub.
+
+---
+
+## 🎯 Objetivo
+
+Praticar o fluxo completo de contribuição: branch → commit → push → PR.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar branch para sua contribuição
+```bash
+git checkout -b adicionar-minha-biografia
+```
+
+### Passo 2: Criar ou editar arquivo
+```bash
+echo "Meu nome é [seu nome]" > biografia.txt
+echo "Estou aprendendo Git e GitHub" >> biografia.txt
+git add biografia.txt
+git commit -m "Adicionar minha biografia"
+```
+
+### Passo 3: Enviar para o fork
+```bash
+git push -u origin adicionar-minha-biografia
+```
+
+### Passo 4: Criar Pull Request no GitHub
+1. Acesse seu fork no GitHub
+2. Aparecerá "Compare & pull request"
+3. Título: "Adicionar minha biografia"
+4. Descrição: "Adiciona arquivo de biografia para o exercício do módulo 7"
+5. "Create Pull Request"
+
+### Passo 5: Documentar
+Crie `meu_pr.txt`:
+```
+Branch: adicionar-minha-biografia
+Arquivo alterado: biografia.txt
+PR criado: sim/não
+URL do PR: [url]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A branch foi criada e enviada? ✅
+2. O PR aparece no GitHub? ✅
+3. O PR está aberto e pronto para review? ✅

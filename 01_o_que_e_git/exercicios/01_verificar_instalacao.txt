@@ -1,0 +1,67 @@
+# Exercício 01 — Verificar Instalação do Git
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Verificar se o Git está instalado corretamente no seu computador e identificar a versão.
+
+---
+
+## 🎯 Objetivo
+
+Confirmar que o Git está funcionando e anotar a versão instalada.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Abrir o terminal
+- **Windows**: Abra o PowerShell ou Git Bash
+- **macOS**: Abra o Terminal
+- **Linux**: Abra o Terminal
+
+### Passo 2: Verificar a versão
+```bash
+git --version
+```
+
+### Passo 3: Anotar a versão encontrada
+Crie um arquivo chamado `minha_versao.txt` na pasta do exercício e anote:
+```
+Meu nome: [seu nome]
+Sistema operacional: [Windows/macOS/Linux]
+Versão do Git: [versão que apareceu]
+Data da instalação: [data]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git --version
+git version 2.43.0.windows.1
+```
+
+> **Nota:** A versão pode ser diferente dependendo de quando você instalou. Qualquer versão 2.x.x está adequada.
+
+---
+
+## 🔍 Verificação
+
+1. O comando `git --version` retornou uma versão? ✅
+2. Você criou o arquivo `minha_versao.txt` com as informações? ✅
+3. A versão mostrada é 2.x.x ou superior? ✅
+
+Se todas as respostas forem sim, passe para o próximo exercício!
+
+---
+
+## 🆘 Problemas comuns
+
+- **"git: command not found"**: O Git não está instalado ou não está no PATH
+  - Solução: reinstale o Git marcando "Add to PATH" durante a instalação
+- **Versão muito antiga**: Atualize para a versão mais recente em git-scm.com

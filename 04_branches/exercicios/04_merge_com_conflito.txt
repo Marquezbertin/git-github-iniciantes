@@ -1,0 +1,90 @@
+# Exercício 04 — Merge com Conflito
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar, identificar e resolver um conflito de merge entre branches.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a resolver conflitos de merge na prática, entendendo os marcadores e escolhendo a versão correta.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário de conflito
+```bash
+mkdir conflito-teste
+cd conflito-teste
+git init
+
+echo "Linha 1" > config.txt
+echo "Linha 2" >> config.txt
+echo "Linha 3" >> config.txt
+git add . && git commit -m "Configuração inicial"
+```
+
+### Passo 2: Criar branch e modificar
+```bash
+git checkout -b branch-a
+echo "Modificação da Branch A" > config.txt
+git add . && git commit -m "Branch A modifica configuração"
+```
+
+### Passo 3: Voltar para main e modificar a MESMA linha
+```bash
+git checkout main
+echo "Modificação da Main" > config.txt
+git add . && git commit -m "Main modifica configuração"
+```
+
+### Passo 4: Tentar merge (vai dar conflito!)
+```bash
+git merge branch-a
+```
+
+### Passo 5: Ver o conflito
+```bash
+cat config.txt
+git status
+```
+
+### Passo 6: Resolver o conflito
+Edite o arquivo `config.txt` — remova os marcadores e escolha uma versão (ou combine):
+```bash
+echo "Configuração final resolvida" > config.txt
+git add config.txt
+git commit -m "Resolver conflito: usar configuração combinada"
+```
+
+### Passo 7: Verificar
+```bash
+git log --oneline --graph
+git branch -d branch-a
+```
+
+### Passo 8: Documentar
+Crie `conflito_resolvido.txt`:
+```
+Cenário: Branch A e Main modificaram a mesma linha
+Arquivo conflitante: config.txt
+Marcadores encontrados: <<<<<<<< ======= >>>>>>>
+Resolução escolhida: [usar a da Branch A / da Main / combinar]
+Merge realizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O conflito foi gerado corretamente? ✅
+2. Você identificou os marcadores? ✅
+3. Resolveu o conflito editando o arquivo? ✅
+4. O commit de resolução foi feito? ✅
+5. O repositório está limpo? ✅

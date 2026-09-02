@@ -1,0 +1,98 @@
+# Exercício 03 — Restaurar Arquivos
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar a restauração de arquivos usando `git restore` em diferentes situações.
+
+---
+
+## 🎯 Objetivo
+
+Saber quando e como usar `git restore` para desfazer mudanças específicas.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir restore-teste
+cd restore-teste
+git init
+
+echo "Conteúdo original" > arquivo.txt
+echo "Outro arquivo" > outro.txt
+git add . && git commit -m "Arquivos iniciais"
+```
+
+### Passo 2: Modificar e NÃO adicionar
+```bash
+echo "Mudança alterada" > arquivo.txt
+
+git restore arquivo.txt
+cat arquivo.txt
+```
+
+O arquivo voltou ao conteúdo original!
+
+### Passo 3: Modificar e ADICIONAR ao staging
+```bash
+echo "Mudança staged" > arquivo.txt
+git add arquivo.txt
+
+git restore --staged arquivo.txt
+git status
+```
+
+O arquivo saiu do staging mas a modificação continua!
+
+### Passo 4: Restaurar TUDO
+```bash
+echo "Perdi tudo" > arquivo.txt
+echo "Perdi outro" > outro.txt
+git add .
+
+git restore --staged --worktree .
+git status
+```
+
+Ambos os arquivos voltaram ao estado do último commit.
+
+### Passo 5: Documentar
+Crie `restore_resultado.txt`:
+```
+1. restore arquivo.txt (sem add): [conteúdo após restore]
+2. restore --staged arquivo.txt: [status após restore]
+3. restore --staged --worktree: [todos os arquivos restaurados?]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git restore arquivo.txt
+$ cat arquivo.txt
+Conteúdo original
+
+$ git restore --staged arquivo.txt
+Changes not staged for commit:
+  modified:   arquivo.txt
+
+$ git restore --staged --worktree .
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
+
+---
+
+## 🔍 Verificação
+
+1. `git restore` desfez mudanças não staged? ✅
+2. `git restore --staged` removeu do staging? ✅
+3. `git restore --staged --worktree` restaurou tudo? ✅

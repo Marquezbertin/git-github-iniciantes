@@ -1,0 +1,130 @@
+# Exercício 06 — Diagnóstico Completo
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Realizar um diagnóstico completo da instalação e configuração do Git, verificando todos os componentes essenciais.
+
+---
+
+## 🎯 Objetivo
+
+Garantir que seu ambiente Git está 100% pronto para trabalhar, verificando instalação, configurações, ferramentas auxiliares e compatibilidade.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Verificar instalação completa
+```bash
+# Versão do Git
+git --version
+
+# Caminho do executável
+which git        # macOS/Linux
+where git        # Windows
+
+# Verificar se gitk funciona (GUI)
+gitk --version
+```
+
+### Passo 2: Verificar todas as configurações essenciais
+```bash
+# Identidade
+git config --global user.name
+git config --global user.email
+
+# Editor
+git config --global core.editor
+
+# Configuração de linha (Windows)
+git config --global core.autocrlf
+
+# Configuração de linha (macOS/Linux)
+# Deve ser: input
+git config --global core.autocrlf
+```
+
+### Passo 3: Verificar protocolos SSH
+```bash
+# Verificar se SSH está disponível
+ssh -V
+
+# Verificar se há chaves SSH
+ls -la ~/.ssh/
+# Windows PowerShell:
+Get-ChildItem -Path "$env:USERPROFILE\.ssh"
+```
+
+### Passo 4: Verificar integração com editores
+```bash
+# Testar abertura do editor
+code --version    # VS Code
+# Ou seu editor configurado
+```
+
+### Passo 5: Criar relatório completo
+Crie `diagnostico_git.txt` com o seguinte formato:
+```
+=== DIAGNÓSTICO DO GIT ===
+
+1. VERSÃO
+   Git: [versão]
+   Caminho: [caminho]
+
+2. IDENTIDADE
+   Nome: [nome configurado]
+   Email: [email configurado]
+
+3. EDITOR
+   Configurado: [editor]
+   Funcionando: sim/não
+
+4. SISTEMA
+   SO: [sistema operacional]
+   Shell: [bash/powershell/etc]
+   autocrlf: [valor]
+
+5. SSH
+   Chave pública existe: sim/não
+   [Se sim] Caminho: [caminho da chave]
+
+6. STATUS GERAL
+   Tudo configurado corretamente: sim/não
+   Pendências: [listar se houver]
+```
+
+---
+
+## ✅ Saída esperada
+
+Um diagnóstico completo mostrando todas as configurações funcionando corretamente. Todas as seções devem estar preenchidas.
+
+---
+
+## 🔍 Verificação
+
+1. Todas as 6 seções do relatório estão preenchidas? ✅
+2. A versão do Git é 2.x.x ou superior? ✅
+3. Identidade (nome e email) estão configuradas? ✅
+4. Editor está funcionando? ✅
+5. SSH está disponível? ✅
+6. Arquivo `diagnostico_git.txt` criado corretamente? ✅
+
+---
+
+## 🎉 Parabéns!
+
+Se você completou este exercício, seu ambiente Git está totalmente pronto! Agora você está preparado para o Módulo 02 — Primeiro Repositório.
+
+---
+
+## 💡 Dica avançada
+
+Se algo não estiver funcionando, verifique:
+- Se o Git está no PATH do sistema
+- Se o editor está instalado e acessível
+- Se as credenciais SSH estão configuradas (para GitHub)

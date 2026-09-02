@@ -1,0 +1,112 @@
+# Exercício 05 — Explorar Histórico
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Explorar o histórico de commits usando diferentes opções do `git log`.
+
+---
+
+## 🎯 Objetivo
+
+Dominar os comandos de visualização de histórico para entender a evolução de um projeto.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar vários commits (use o repositório do exercício anterior ou crie um novo)
+```bash
+mkdir historico-teste
+cd historico-teste
+git init
+
+echo "v1" > arquivo.txt
+git add . && git commit -m "Versão inicial do arquivo"
+
+echo "v2" >> arquivo.txt
+git add . && git commit -m "Adicionar segunda linha"
+
+echo "v3" >> arquivo.txt
+git add . && git commit -m "Adicionar terceira linha"
+
+echo "modulo1" > modulo1.txt
+git add . && git commit -m "Adicionar módulo 1"
+
+echo "modulo2" > modulo2.txt
+git add . && git commit -m "Adicionar módulo 2"
+```
+
+### Passo 2: Histórico completo
+```bash
+git log
+```
+
+### Passo 3: Um commit por linha
+```bash
+git log --oneline
+```
+
+### Passo 4: Com gráfico
+```bash
+git log --oneline --graph
+```
+
+### Passo 5: Últimos 3 commits
+```bash
+git log -3 --oneline
+```
+
+### Passo 6: Mostrar mudanças de cada commit
+```bash
+git log --stat
+```
+
+### Passo 7: Mostrar diff de um commit específico
+```bash
+# Pegue o hash do segundo commit do log e use:
+git show [hash-do-commit]
+```
+
+### Passo 8: Documentar
+Crie `exploracao_historico.txt`:
+```
+Total de commits: [número]
+Hash do primeiro commit: [hash]
+Hash do último commit: [hash]
+Arquivo mais modificado: [nome]
+Commit com mais mudanças: [hash e mensagem]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git log --oneline
+a1b2c3d Adicionar módulo 2
+e4f5g6h Adicionar módulo 1
+i7j8k9l Adicionar terceira linha
+m0n1o2p Adicionar segunda linha
+q3r4s5t Versão inicial do arquivo
+
+$ git log --oneline --graph
+* a1b2c3d Adicionar módulo 2
+* e4f5g6h Adicionar módulo 1
+* i7j8k9l Adicionar terceira linha
+* m0n1o2p Adicionar segunda linha
+* q3r4s5t Versão inicial do arquivo
+```
+
+---
+
+## 🔍 Verificação
+
+1. `git log --oneline` mostra todos os commits? ✅
+2. `git log --graph` mostra a estrutura? ✅
+3. `git log -3` mostra apenas 3 commits? ✅
+4. `git show [hash]` mostra as mudanças do commit? ✅
+5. Criou o arquivo de documentação? ✅

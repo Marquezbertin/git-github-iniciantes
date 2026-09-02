@@ -1,0 +1,96 @@
+# Exercício 02 — Primeiro Commit
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar um arquivo, adicioná-lo ao staging e fazer o primeiro commit do repositório.
+
+---
+
+## 🎯 Objetivo
+
+Entender o fluxo completo: criar arquivo → git add → git commit.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar um arquivo
+```bash
+echo "Olá, este é meu primeiro arquivo!" > hello.txt
+```
+
+### Passo 2: Verificar o status
+```bash
+git status
+```
+
+O arquivo deve aparecer em vermelho como "Untracked files".
+
+### Passo 3: Adicionar ao staging
+```bash
+git add hello.txt
+```
+
+### Passo 4: Verificar novamente
+```bash
+git status
+```
+
+Agora o arquivo deve aparecer em verde como "Changes to be committed".
+
+### Passo 5: Fazer o commit
+```bash
+git commit -m "Adicionar primeiro arquivo hello.txt"
+```
+
+### Passo 6: Verificar o commit
+```bash
+git status
+git log --oneline
+```
+
+### Passo 7: Documentar
+Crie `primeiro_commit.txt`:
+```
+Arquivo criado: hello.txt
+Conteúdo: Olá, este é meu primeiro arquivo!
+Comando git add: git add hello.txt
+Comando git commit: git commit -m "Adicionar primeiro arquivo hello.txt"
+hash do commit: [primeiro parâmetro do log]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git status (antes do add)
+Untracked files:
+  hello.txt
+
+$ git add hello.txt
+$ git status
+Changes to be committed:
+  new file: hello.txt
+
+$ git commit -m "Adicionar primeiro arquivo hello.txt"
+[main (root-commit) abc1234] Adicionar primeiro arquivo hello.txt
+ 1 file changed, 1 insertion(+)
+
+$ git log --oneline
+abc1234 Adicionar primeiro arquivo hello.txt
+```
+
+---
+
+## 🔍 Verificação
+
+1. O arquivo foi criado corretamente? ✅
+2. `git add` moveu o arquivo para staging? ✅
+3. O commit foi realizado com mensagem correta? ✅
+4. `git log --oneline` mostra o commit? ✅
+5. Criou o arquivo de documentação? ✅

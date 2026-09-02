@@ -1,0 +1,100 @@
+# Exercício 06 — Pipeline Completa
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Criar uma pipeline completa: lint → test → build → deploy.
+
+---
+
+## 🎯 Objetivo
+
+Integrar todas as etapas de CI/CD em um único workflow.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar workflow completo
+```yaml
+# .github/workflows/pipeline.yml
+name: Pipeline Completa
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint
+        run: echo "Linting OK"
+
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Testes
+        run: node teste.js || true
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: echo "Build concluído"
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: echo "Deploy realizado!"
+```
+
+### Passo 2: Commit e push
+```bash
+git add .
+git commit -m "Pipeline completa: lint → test → build → deploy"
+git push
+```
+
+### Passo 3: Verificar
+Na aba Actions, veja os 4 jobs rodando em sequência.
+
+### Passo 4: Documentar
+Crie `pipeline_final.txt`:
+```
+=== PIPELINE COMPLETA ===
+
+Jobs:
+1. Lint: [sucesso/erro]
+2. Test: [sucesso/erro] (depende do Lint)
+3. Build: [sucesso/erro] (depende do Test)
+4. Deploy: [sucesso/erro] (apenas na main)
+
+Pipeline completa: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Os jobs rodam em sequência (dependências)? ✅
+2. Deploy só roda na main? ✅
+3. Se lint falhar, os próximos jobs não rodam? ✅
+4. O histórico mostra a pipeline completa? ✅

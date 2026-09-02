@@ -1,0 +1,65 @@
+# Exercício 06 — Custom Domain
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Configurar um domínio personalizado no GitHub Pages.
+
+---
+
+## 🎯 Objetivo
+
+Conectar um domínio próprio ao site hospedado no GitHub Pages.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar arquivo CNAME
+```bash
+echo "www.meudominio.com" > CNAME
+git add CNAME
+git commit -m "Adicionar domínio personalizado"
+git push
+```
+
+### Passo 2: Configurar DNS
+No provedor de domínio, configure:
+
+| Tipo | Nome | Valor |
+|------|------|-------|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | SEU-USUARIO.github.io |
+
+### Passo 3: Configurar no GitHub
+1. Settings → Pages
+2. "Custom domain": `www.meudominio.com`
+3. Marque "Enforce HTTPS"
+
+### Passo 4: Aguardar propagação
+Pode levar até 48 horas.
+
+### Passo 5: Documentar
+Crie `custom_domain.txt`:
+```
+Domínio: www.meudominio.com
+Arquivo CNAME: criado
+DNS configurado: sim/não
+HTTPS habilitado: sim/não
+Aguardando propagação: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O arquivo CNAME existe? ✅
+2. O DNS está configurado? ✅
+3. O GitHub reconhece o domínio? ✅
+4. HTTPS está habilitado? ✅

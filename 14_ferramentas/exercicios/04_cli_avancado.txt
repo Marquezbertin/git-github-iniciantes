@@ -1,0 +1,68 @@
+# Exercício 04 — CLI Avançado
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Usar comandos avançados do GitHub CLI para gerenciar PRs e workflows.
+
+---
+
+## 🎯 Objetivo
+
+Dominar as funcionalidades avançadas do gh CLI.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar PR pelo terminal
+```bash
+gh pr create --title "Feature nova" --body "Adiciona nova funcionalidade" --base main
+```
+
+### Passo 2: Listar PRs
+```bash
+gh pr list
+```
+
+### Passo 3: Ver detalhes de um PR
+```bash
+gh pr view 1
+```
+
+### Passo 4: Ver mudanças
+```bash
+gh pr diff 1
+```
+
+### Passo 5: Merge PR
+```bash
+gh pr merge 1 --merge
+```
+
+### Passo 6: Ver workflows
+```bash
+gh run list
+```
+
+### Passo 7: Documentar
+Crie `gh_cli_avancado.txt`:
+```
+PR criado: sim/não
+PR listado: sim/não
+Diff visualizado: sim/não
+Merge realizado: sim/não
+Workflows listados: [número]
+```
+
+---
+
+## 🔍 Verificação
+
+1. `gh pr create` funciona? ✅
+2. `gh pr diff` mostra mudanças? ✅
+3. `gh pr merge` funciona? ✅
+4. `gh run list` mostra execuções? ✅

@@ -1,0 +1,77 @@
+# Exercício 03 — Cherry-pick
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Selecionar commits específicos de outro branch usando cherry-pick.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a trazer commits individuais entre branches.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário
+```bash
+mkdir cherry-pick-teste
+cd cherry-pick-teste
+git init
+
+echo "Base" > sistema.txt
+git add . && git commit -m "Base"
+```
+
+### Passo 2: Criar branch com múltiplos commits
+```bash
+git checkout -b feature
+echo "Fix bug" >> sistema.txt
+git add . && git commit -m "Fix bug #42"
+
+echo "Nova funcionalidade" >> sistema.txt
+git add . && git commit -m "Adicionar funcionalidade nova"
+
+echo "Refactor" >> sistema.txt
+git add . && git commit -m "Refatorar código"
+```
+
+### Passo 3: Voltar à main e usar cherry-pick
+```bash
+git checkout main
+
+# Pegar hash do commit do fix
+git log feature --oneline
+
+# Cherry-pick apenas o fix
+git cherry-pick [hash-do-fix]
+```
+
+### Passo 4: Verificar
+```bash
+git log --oneline
+cat sistema.txt
+```
+
+### Passo 5: Documentar
+Crie `cherry_pick.txt`:
+```
+Commits na feature: 3
+Commit selecionado: [hash e mensagem]
+Commits na main antes: 1
+Commits na main depois: 2
+Apenas o fix foi trazido: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Apenas o commit selecionado foi copiado? ✅
+2. O hash é diferente (novo commit)? ✅
+3. O conteúdo está correto? ✅

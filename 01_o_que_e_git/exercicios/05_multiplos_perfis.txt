@@ -1,0 +1,85 @@
+# Exercício 05 — Múltiplos Perfis
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Configurar perfis Git diferentes para contextos distintos (pessoal e trabalho).
+
+---
+
+## 🎯 Objetivo
+
+Aprender a usar configurações locais (por repositório) em vez de globais para trabalhar com múltiplas identidades.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar dois repositórios de teste
+```bash
+mkdir perfil-pessoal
+mkdir perfil-trabalho
+```
+
+### Passo 2: Configurar o repositório "pessoal"
+```bash
+cd perfil-pessoal
+git init
+git config user.name "Seu Nome"
+git config user.email "pessoal@email.com"
+```
+
+### Passo 3: Configurar o repositório "trabalho"
+```bash
+cd ../perfil-trabalho
+git init
+git config user.name "Seu Nome"
+git config user.email "trabalho@empresa.com"
+```
+
+### Passo 4: Verificar as configurações locais
+```bash
+# No repositório pessoal
+cd ../perfil-pessoal
+git config user.email
+# Deve mostrar: pessoal@email.com
+
+# No repositório trabalho
+cd ../perfil-trabalho
+git config user.email
+# Deve mostrar: trabalho@empresa.com
+```
+
+### Passo 5: Documentar
+Crie `multiplos_perfis.txt`:
+```
+Perfil pessoal: [email pessoal]
+Perfil trabalho: [email trabalho]
+Configuração usada: git config (sem --global)
+Localização: cada pasta tem seu próprio .git/config
+```
+
+---
+
+## ✅ Saída esperada
+
+Cada repositório deve ter seu próprio email configurado, diferente do global.
+
+---
+
+## 🔍 Verificação
+
+1. O email no repositório pessoal é diferente do trabalho? ✅
+2. As configurações locais estão salvas em `.git/config` de cada pasta? ✅
+3. Criou o arquivo de documentação? ✅
+
+---
+
+## 💡 Dica
+
+- `git config --global` = configura para TODOS os repositórios
+- `git config` (sem --global) = configura APENAS para o repositório atual
+- A configuração local tem prioridade sobre a global

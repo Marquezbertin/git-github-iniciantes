@@ -1,0 +1,92 @@
+# Exercício 06 — Fluxo Completo
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Simular o fluxo completo: clone, branch, commit, push, pull, merge e cleanup.
+
+---
+
+## 🎯 Objetivo
+
+Integrar todos os comandos de remote em um fluxo realista de trabalho.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repo no GitHub e clonar
+```bash
+# Crie um repo "fluxo-completo" no GitHub
+git clone https://github.com/SEU-USUARIO/fluxo-completo.git
+cd fluxo-completo
+```
+
+### Passo 2: Criar estrutura
+```bash
+echo "# Projeto Fluxo Completo" > README.md
+echo "var GLOBAL = true;" > app.js
+git add . && git commit -m "Estrutura inicial"
+git push origin main
+```
+
+### Passo 3: Criar feature
+```bash
+git checkout -b feature/estilo
+echo "body { margin: 0; }" > style.css
+git add . && git commit -m "Adicionar estilos base"
+git push -u origin feature/estilo
+```
+
+### Passo 4: Correção na main (via GitHub)
+No GitHub, edite README.md e faça commit.
+
+### Passo 5: Sincronizar feature com main
+```bash
+git checkout feature/estilo
+git pull --rebase origin main
+git push
+```
+
+### Passo 6: Merge via PR (próximo módulo)
+```bash
+# Ou faça merge local:
+git checkout main
+git merge feature/estilo
+git push origin main
+```
+
+### Passo 7: Limpar
+```bash
+git branch -d feature/estilo
+git push origin --delete feature/estilo
+git fetch --prune
+```
+
+### Passo 8: Documentar
+Crie `fluxo_final.txt`:
+```
+=== FLUXO COMPLETO ===
+
+1. Clone: sim/não
+2. Commits na main: [número]
+3. Branch criada: feature/estilo
+4. Push da feature: sim/não
+5. Sync com main: pull --rebase
+6. Merge realizado: sim/não
+7. Branch deletada: sim/não
+8. Repositório final limpo: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O clone funcionou? ✅
+2. A estrutura foi criada e commitada? ✅
+3. A feature foi enviada ao remote? ✅
+4. O sync com main funcionou? ✅
+5. A branch foi limpa corretamente? ✅

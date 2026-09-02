@@ -1,0 +1,54 @@
+# Exercício 01 — Encontrar Projeto
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Encontrar um projeto open source para contribuir usando filtros do GitHub.
+
+---
+
+## 🎯 Objetivo
+
+Praticar a busca por projetos que aceitam contribuições de iniciantes.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Buscar Issues para iniciantes
+Acesse: https://github.com/topics/good-first-issue
+
+### Passo 2: Filtrar por linguagem
+Escolha uma linguagem que conhece (ex: JavaScript, Python).
+
+### Passo 3: Analisar o projeto
+- Leia o README.md
+- Verifique a licença
+- Veja quantos contribuidores tem
+- Veja a atividade recente
+
+### Passo 4: Documentar
+Crie `projetos_encontrados.txt`:
+```
+Projeto 1: [nome] - [linguagem]
+- Aceita iniciantes: sim/não
+- License: [tipo]
+- Atividade: [ativa/inativa]
+
+Projeto 2: [nome] - [linguagem]
+...
+
+Melhor opção: [nome do projeto]
+Motivo: [por quê]
+```
+
+---
+
+## 🔍 Verificação
+
+1. Você encontrou pelo menos 3 projetos? ✅
+2. Analisou README e licença? ✅
+3. Escolheu o melhor projeto? ✅

@@ -1,0 +1,70 @@
+# Exercício 02 — GitHub Flow
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar o GitHub Flow simplificado: branch → commit → PR → merge.
+
+---
+
+## 🎯 Objetivo
+
+Entender o fluxo de trabalho mais comum no GitHub.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir github-flow
+cd github-flow
+git init
+
+echo "# App" > app.js
+git add . && git commit -m "Estrutura inicial"
+```
+
+### Passo 2: Criar branch para feature
+```bash
+git checkout -b feature/estilo
+echo "body { margin: 0; }" > style.css
+git add . && git commit -m "Adicionar estilos base"
+git push -u origin feature/estilo
+```
+
+### Passo 3: Criar PR
+No GitHub, crie PR da branch feature/estilo para main.
+
+### Passo 4: Simular review
+Após review, merge via GitHub.
+
+### Passo 5: Limpar
+```bash
+git checkout main
+git pull
+git branch -d feature/estilo
+```
+
+### Passo 6: Documentar
+Crie `github_flow.txt`:
+```
+Branch: feature/estilo
+Commits: 1
+PR criado: sim/não
+Review: sim/não
+Merge: sim/não
+Branch deletada: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. A branch foi criada da main? ✅
+2. O PR foi criado? ✅
+3. O merge foi realizado? ✅
+4. A branch foi limpa? ✅

@@ -1,0 +1,59 @@
+# Exercício 06 — Organização no GitHub
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Explorar como organizar múltiplos repositórios, usar pins no perfil e configurar settings de segurança.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer as funcionalidades avançadas de organização do GitHub.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Pinar repositórios no perfil
+1. Acesse https://github.com/SEU-USUARIO
+2. Clique no ícone de configurações ao lado de "Pinned"
+3. Selecione até 6 repositórios para destacar
+
+### Passo 2: Criar repositórios temáticos
+```bash
+# Repositório de notas
+gh repo create notas-estudo --public
+
+# Repositório de projetos
+gh repo create projetos-pessoais --public
+```
+
+### Passo 3: Configurar topics nos repos
+No GitHub:
+1. Acesse o repositório
+2. Clique na engrenagem ao lado de "About"
+3. Adicione topics: `estudo`, `git`, `github`, `iniciante`
+
+### Passo 4: Verificar README do perfil
+Acesse https://github.com/SEU-USUARIO e verifique se os pins aparecem.
+
+### Passo 5: Documentar
+Crie `organizacao_github.txt`:
+```
+Repositórios criados: [lista]
+Pins configurados: [lista]
+Topics adicionados: [lista]
+Perfil organizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Os pins aparecem no perfil? ✅
+2. Os repositórios têm topics? ✅
+3. O perfil está organizado? ✅

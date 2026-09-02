@@ -1,0 +1,83 @@
+# Exercício 03 — Configurar SSH
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Gerar chaves SSH, adicionar ao GitHub e testar a conexão.
+
+---
+
+## 🎯 Objetivo
+
+Configurar autenticação SSH para não precisar digitar senha a cada push.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Gerar chave SSH
+```bash
+ssh-keygen -t ed25519 -C "seu@email.com"
+# Pressione Enter para aceitar local padrão
+# Digite uma passphrase (opcional)
+```
+
+### Passo 2: Iniciar agente SSH
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+### Passo 3: Copiar chave pública
+```bash
+# Linux
+cat ~/.ssh/id_ed25519.pub
+
+# macOS
+pbcopy < ~/.ssh/id_ed25519.pub
+
+# Windows
+Get-Content ~/.ssh/id_ed25519.pub
+```
+
+Copie toda a saída.
+
+### Passo 4: Adicionar no GitHub
+1. https://github.com/settings/keys
+2. "New SSH key"
+3. Título: "Meu Computador"
+4. Cole a chave
+5. "Add SSH key"
+
+### Passo 5: Testar
+```bash
+ssh -T git@github.com
+```
+
+### Passo 6: Usar SSH no repositório
+```bash
+git remote set-url origin git@github.com:USUARIO/meu-repo.git
+git remote -v
+```
+
+### Passo 7: Documentar
+Crie `ssh_configurado.txt`:
+```
+Chave gerada: ed25519
+Chave adicionada ao GitHub: sim/não
+Conexão testada: sim/não
+Mensagem de retorno: [mensagem do ssh -T]
+Remote atualizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. A chave SSH foi gerada? ✅
+2. A chave foi adicionada ao GitHub? ✅
+3. `ssh -T` retorna "successfully authenticated"? ✅
+4. O remote usa SSH agora? ✅

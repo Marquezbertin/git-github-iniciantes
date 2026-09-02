@@ -1,0 +1,67 @@
+# Exercício 03 — Primeira Contribuição
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Fazer sua primeira contribuição real para um projeto open source.
+
+---
+
+## 🎯 Objetivo
+
+Completar o fluxo completo: fork → clone → branch → commit → PR.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Encontrar Issue "good first issue"
+No projeto escolhido, encontre uma Issue com label `good first issue`.
+
+### Passo 2: Comentar na Issue
+```
+Olá! Gostaria de trabalhar nesta Issue. Posso começar?
+```
+
+### Passo 3: Fork e clone
+```bash
+gh repo fork USUARIO/REPO --clone
+cd REPO
+```
+
+### Passo 4: Criar branch e implementar
+```bash
+git checkout -b fix-descricao-da-issue
+# Implementar a correção
+git add .
+git commit -m "Fix: descrição clara da mudança"
+git push -u origin fix-descricao-da-issue
+```
+
+### Passo 5: Criar PR
+Crie PR com:
+- Título claro
+- Descrição do que foi feito
+- Link para a Issue: "Closes #XX"
+
+### Passo 6: Documentar
+Crie `primeira_contribuicao.txt`:
+```
+Projeto: [nome]
+Issue: [número e título]
+O que fiz: [descrição]
+PR: [URL]
+Status: [aberto/merged/pendente]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Issue foi escolhida e comentada? ✅
+2. O fork foi criado? ✅
+3. O PR foi aberto? ✅
+4. A Issue está linkada? ✅

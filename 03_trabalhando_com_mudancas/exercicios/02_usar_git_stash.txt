@@ -1,0 +1,98 @@
+# Exercício 02 — Usar git stash
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Aprender a pausar trabalho com `git stash` e restaurá-lo depois.
+
+---
+
+## 🎯 Objetivo
+
+Entender como stash funciona para salvar alterações sem commitar.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir stash-teste
+cd stash-teste
+git init
+
+echo "v1" > tarefa.txt
+git add . && git commit -m "Versão inicial"
+```
+
+### Passo 2: Começar uma tarefa (modificar arquivo)
+```bash
+echo "Trabalhando na tarefa..." >> tarefa.txt
+git status
+```
+
+### Passo 3: Precisa mudar de tarefa — usar stash
+```bash
+git stash
+git status
+```
+
+O repositório deve estar limpo agora!
+
+### Passo 4: Criar commit de emergência
+```bash
+echo "URGENTE" > urgente.txt
+git add . && git commit -m "Corrigir bug urgente"
+```
+
+### Passo 5: Voltar para a tarefa anterior
+```bash
+git stash list
+git stash pop
+```
+
+As mudanças originais devem voltar!
+
+### Passo 6: Documentar
+Crie `stash_resultado.txt`:
+```
+Estado após stash: [o que git status mostrou]
+Stash list: [o que apareceu]
+Estado após stash pop: [o que aconteceu]
+As mudanças voltaram: sim/não
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git stash
+Saved working directory and index state WIP on main: abc1234 Versão inicial
+
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+$ git stash list
+stash@{0}: WIP on main: abc1234 Versão inicial
+
+$ git stash pop
+On branch main
+Changes not staged for commit:
+  modified:   tarefa.txt
+
+Dropped refs/stash@{0}
+```
+
+---
+
+## 🔍 Verificação
+
+1. Após stash, `git status` está limpo? ✅
+2. Conseguiu fazer outro commit? ✅
+3. Após pop, as mudanças voltaram? ✅
+4. O stash foi removido da lista? ✅

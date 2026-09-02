@@ -1,0 +1,56 @@
+# Exercício 01 — Criar Repositório no GitHub
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar um repositório no GitHub pela interface web e conectá-lo ao local.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer a interface do GitHub e criar seu primeiro repositório online.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório no GitHub
+1. Acesse https://github.com/new
+2. Nome: `meu-primeiro-github`
+3. Descrição: "Meu primeiro repositório no GitHub"
+4. Marque "Add a README file"
+5. Licença: MIT
+6. Clique "Create repository"
+
+### Passo 2: Clonar o repositório
+```bash
+git clone https://github.com/SEU-USUARIO/meu-primeiro-github.git
+cd meu-primeiro-github
+```
+
+### Passo 3: Verificar
+```bash
+git remote -v
+ls -la
+```
+
+### Passo 4: Documentar
+Crie `repo_github_criado.txt`:
+```
+Nome do repositório: meu-primeiro-github
+URL: [url completa]
+Clone realizado: sim/não
+Arquivos baixados: [lista]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O repositório aparece no GitHub? ✅
+2. O clone funciona? ✅
+3. O remote está configurado? ✅

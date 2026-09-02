@@ -1,0 +1,87 @@
+# Exercício 06 — Receber Contribuições
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Configurar o projeto para receber contribuições da comunidade.
+
+---
+
+## 🎯 Objetivo
+
+Tornar o projeto acolhedor e fácil de contribuir.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar Issues "good first issue"
+```bash
+gh issue create --title "Adicionar exercício bônus" --label "good first issue"
+gh issue create --title "Melhorar documentação do exercício 3" --label "good first issue"
+gh issue create --title "Adicionar tradução para inglês" --label "enhancement"
+```
+
+### Passo 2: Verificar templates
+Teste criando uma Issue usando o template.
+
+### Passo 3: Criar Project board
+Configure um board Kanban para acompanhar contribuições.
+
+### Passo 4: Promover o projeto
+- Compartilhe nas redes sociais
+- Adicione ao README do curso
+- Convide colegas para contribuir
+
+### Passo 5: Responder contribuições
+Quando alguém abrir um PR:
+1. Responda em até 24h
+2. Seja educado e construtivo
+3. Ofereça ajuda se necessário
+
+### Passo 6: Documentar
+Crie `contribuicoes_recebidas.txt`:
+```
+=== PROJETO ABERTO A CONTRIBUIÇÕES ===
+
+Issues criadas: [número]
+Issues good first issue: [número]
+Project board: [sim/não]
+Templates funcionando: sim/não
+Projeto promovido: sim/não
+Status: [pronto para receber contribuições]
+```
+
+---
+
+## 🎉 Parabéns!
+
+Você completou todos os 15 módulos do curso de Git e GitHub!
+
+### O que você aprendeu:
+1. ✅ O que é Git e como configurar
+2. ✅ Criar repositórios e commits
+3. ✅ Gerenciar mudanças
+4. ✅ Usar branches
+5. ✅ Trabalhar com remotes
+6. ✅ Usar o GitHub
+7. ✅ Criar Pull Requests
+8. ✅ Gerenciar Issues e projetos
+9. ✅ Criar sites com GitHub Pages
+10. ✅ Técnicas avançadas do Git
+11. ✅ Trabalhar em equipe
+12. ✅ CI/CD com GitHub Actions
+13. ✅ Contribuir para open source
+14. ✅ Usar ferramentas (VS Code, Desktop, CLI)
+15. ✅ Criar projeto completo
+
+### Próximos passos:
+- Contribua para projetos open source reais
+- Compartilhe seu projeto com a comunidade
+- Continue aprendendo!
+- Participe do Laboratório Tech Social
+
+Feito com ❤️ pelo Laboratório Tech Social

@@ -1,0 +1,68 @@
+# Exercício 03 — Pull e Fetch
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar `git pull` e `git fetch` para sincronizar repositórios locais e remotos.
+
+---
+
+## 🎯 Objetivo
+
+Diferenciar pull e fetch e saber quando usar cada um.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Simular mudança no remote
+1. Acesse seu repositório no GitHub
+2. Edite o README.md pelo editor web (adicione uma linha)
+3. Faça o commit no GitHub
+
+### Passo 2: Verificar o que mudou (fetch)
+```bash
+git fetch origin
+git log origin/main --oneline
+git log main --oneline
+```
+
+### Passo 3: Comparar local vs remote
+```bash
+git diff main origin/main
+```
+
+### Passo 4: Aplicar as mudanças (pull)
+```bash
+git pull origin main
+git log --oneline
+```
+
+### Passo 5: Pull com rebase
+```bash
+# Faça outra mudança no GitHub
+git pull --rebase origin main
+git log --oneline
+```
+
+### Passo 6: Documentar
+Crie `pull_fetch.txt`:
+```
+git fetch: [baixou sem mesclar?]
+Commits no remote: [número]
+Commits no local antes do pull: [número]
+Commits no local após pull: [número]
+Diferença entre pull e pull --rebase: [explicação]
+```
+
+---
+
+## 🔍 Verificação
+
+1. `git fetch` baixou as mudanças sem mesclar? ✅
+2. `git diff` mostrou as diferenças? ✅
+3. `git pull` mesclou corretamente? ✅
+4. Entendeu a diferença entre fetch e pull? ✅

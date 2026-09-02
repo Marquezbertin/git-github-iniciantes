@@ -1,0 +1,61 @@
+# Exercício 02 — Primeiro Push
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Enviar o primeiro commit para o GitHub usando `git push`.
+
+---
+
+## 🎯 Objetivo
+
+Realizar o primeiro push e entender o tracking de branch.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Usar o repositório configurado no exercício anterior
+
+### Passo 2: Fazer push com tracking
+```bash
+git push -u origin main
+```
+
+### Passo 3: Verificar no GitHub
+1. Acesse https://github.com/SEU-USUARIO/meu-repo-remote
+2. O README.md deve aparecer!
+
+### Passo 4: Verificar tracking
+```bash
+git branch -vv
+```
+
+### Passo 5: Testar push sem remote
+```bash
+echo "Nova linha" >> README.md
+git add . && git commit -m "Adicionar linha ao README"
+git push
+```
+
+### Passo 6: Documentar
+Crie `primeiro_push.txt`:
+```
+Repositório: meu-repo-remote
+Branch enviada: main
+Tracking configurado: sim/não
+Arquivo enviado: README.md
+URL do repositório: [url]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O push foi realizado com sucesso? ✅
+2. O código aparece no GitHub? ✅
+3. Tracking está configurado (`git branch -vv`)? ✅
+4. Push sem `-u` funciona? ✅

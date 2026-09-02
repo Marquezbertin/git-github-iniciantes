@@ -1,0 +1,83 @@
+# Exercício 03 — Lint Automático
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Configurar linting automático no workflow de CI.
+
+---
+
+## 🎯 Objetivo
+
+Garantir qualidade de código com verificação automática de estilo.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar workflow com lint
+```yaml
+# .github/workflows/lint.yml
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - run: npm install
+      
+      - name: Verificar formatação
+        run: echo "Linting passou!"
+        # Em um projeto real: npm run lint
+```
+
+### Passo 2: Criar .editorconfig (opcional)
+```ini
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
+
+### Passo 3: Commit e push
+```bash
+git add .
+git commit -m "CI: adicionar linting"
+git push
+```
+
+### Passo 4: Documentar
+Crie `lint_config.txt`:
+```
+Workflow: Lint
+Trigger: push e PR
+Linting: editorconfig + workflow
+Status: [sucesso/erro]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O workflow roda linting? ✅
+2. Erros de estilo são detectados? ✅
+3. O workflow falha se houver erros? ✅

@@ -1,0 +1,84 @@
+# Exercício 04 — Configurar CI
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Configurar pipeline de CI completa no projeto final.
+
+---
+
+## 🎯 Objetivo
+
+Automatizar testes e validações a cada push.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar workflow
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar estrutura
+        run: |
+          test -f README.md || exit 1
+          test -f LICENSE || exit 1
+          test -f CONTRIBUTING.md || exit 1
+          echo "Estrutura OK!"
+      
+      - name: Verificar README não vazio
+        run: |
+          if [ ! -s README.md ]; then
+            echo "README está vazio!"
+            exit 1
+          fi
+          echo "README OK!"
+```
+
+### Passo 2: Commit e push
+```bash
+git checkout develop
+git add .github/
+git commit -m "CI: adicionar workflow de validação"
+git push
+```
+
+### Passo 3: Criar PR para main
+Crie PR de develop para main.
+
+### Passo 4: Verificar CI
+Na aba Actions, veja o workflow rodando.
+
+### Passo 5: Documentar
+Crie `ci_projeto.txt`:
+```
+Workflow: ci.yml
+Triggers: push (main, develop), PR (main)
+Jobs: 1 (validate)
+Checks: estrutura, README não vazio
+Status: [sucesso/erro]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O workflow existe? ✅
+2. Roda a cada push? ✅
+3. Verifica a estrutura do projeto? ✅
+4. Se algo estiver faltando, o CI falha? ✅

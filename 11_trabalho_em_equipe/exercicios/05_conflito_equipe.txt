@@ -1,0 +1,76 @@
+# Exercício 05 — Conflito em Equipe
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Simular e resolver um conflito que ocorre quando duas pessoas editam o mesmo arquivo.
+
+---
+
+## 🎯 Objetivo
+
+Praticar resolução de conflitos em contexto de equipe.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário
+```bash
+mkdir conflito-equipe
+cd conflito-equipe
+git init
+
+echo "Página inicial" > index.html
+git add . && git commit -m "Página inicial"
+```
+
+### Passo 2: Simular Pessoa A
+```bash
+git checkout -b pessoa-a
+echo "<h1>Olá Mundo</h1>" > index.html
+git add . && git commit -m "Pessoa A: adicionar título"
+```
+
+### Passo 3: Simular Pessoa B (na main)
+```bash
+git checkout main
+echo "<p>Descrição</p>" > index.html
+git add . && git commit -m "Pessoa B: adicionar descrição"
+```
+
+### Passo 4: Merge (conflito!)
+```bash
+git merge pessoa-a
+# Conflito!
+```
+
+### Passo 5: Resolver
+```bash
+cat index.html  # Ver marcadores
+# Editar e combinar:
+echo "<h1>Olá Mundo</h1>
+<p>Descrição</p>" > index.html
+git add index.html
+git commit -m "Resolver conflito: combinar título e descrição"
+```
+
+### Passo 6: Documentar
+Crie `conflito_equipe.txt`:
+```
+Pessoa A modificou: index.html (título)
+Pessoa B modificou: index.html (descrição)
+Solução: combinar ambas as partes
+Resolvido: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O conflito foi gerado? ✅
+2. Ambas as partes foram consideradas? ✅
+3. O merge foi concluído? ✅

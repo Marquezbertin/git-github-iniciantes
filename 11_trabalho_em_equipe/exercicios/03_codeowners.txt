@@ -1,0 +1,70 @@
+# Exercício 03 — CODEOWNERS
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar arquivo CODEOWNERS para definir revisores automáticos por área do código.
+
+---
+
+## 🎯 Objetivo
+
+Configurar revisões automáticas baseadas nos arquivos modificados.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar pasta .github
+```bash
+mkdir -p .github
+```
+
+### Passo 2: Criar CODEOWNERS
+```bash
+cat > .github/CODEOWNERS << 'EOF'
+# Dono geral do projeto
+* @dono-geral
+
+# Documentação
+*.md @equipe-docs
+docs/ @equipe-docs
+
+# Código JavaScript
+*.js @dono-geral
+
+# Configurações
+.github/ @dono-geral
+EOF
+```
+
+### Passo 3: Commit e push
+```bash
+git add .github/
+git commit -m "Configurar CODEOWNERS"
+git push
+```
+
+### Passo 4: Testar
+Quando alguém alterar arquivos .md, os donos serão notificados automaticamente.
+
+### Passo 5: Documentar
+Crie `codeowners.txt`:
+```
+Arquivo: .github/CODEOWNERS
+Dono geral: @dono-geral
+Docs: @equipe-docs
+JS: @dono-geral
+Config: @dono-geral
+```
+
+---
+
+## 🔍 Verificação
+
+1. O arquivo CODEOWNERS existe em .github/? ✅
+2. Tem regras para diferentes áreas? ✅
+3. O push foi realizado? ✅

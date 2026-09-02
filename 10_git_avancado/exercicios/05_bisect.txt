@@ -1,0 +1,85 @@
+# Exercício 05 — Bisect
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Usar git bisect para encontrar o commit que introduziu um bug.
+
+---
+
+## 🎯 Objetivo
+
+Dominar a busca binária do Git para localizar bugs rapidamente.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar histórico com bug escondido
+```bash
+mkdir bisect-teste
+cd bisect-teste
+git init
+
+# 5 commits - o bug está no commit 3
+echo "1" > numeracao.txt
+git add . && git commit -m "Adicionar número 1"
+
+echo "2" >> numeracao.txt
+git add . && git commit -m "Adicionar número 2"
+
+echo "BUG" > numeracao.txt     # ← commit do bug
+git add . && git commit -m "Adicionar número 3"
+
+echo "4" >> numeracao.txt
+git add . && git commit -m "Adicionar número 4"
+
+echo "5" >> numeracao.txt
+git add . && git commit -m "Adicionar número 5"
+```
+
+### Passo 2: Iniciar bisect
+```bash
+git bisect start
+git bisect bad                  # Atual tem bug
+git bisect good [hash-commit-1] # Primeiro não tinha
+```
+
+### Passo 3: Testar cada commit
+O Git vai mostrando commits. Para cada um:
+```bash
+cat numeracao.txt
+# Se "BUG" estiver no arquivo:
+git bisect bad
+# Se não:
+git bisect good
+```
+
+### Passo 4: Encontrar o commit
+O Git vai dizer: "bisect found first bad commit: [hash]"
+
+### Passo 5: Resetar
+```bash
+git bisect reset
+```
+
+### Passo 6: Documentar
+Crie `bisect_resultado.txt`:
+```
+Commits testados: [número]
+Commit do bug: [hash e mensagem]
+Método: git bisect (busca binária)
+Resultado: encontrado em [número] passos
+```
+
+---
+
+## 🔍 Verificação
+
+1. O bisect foi iniciado corretamente? ✅
+2. O commit bug foi encontrado? ✅
+3. O hash está correto? ✅
+4. `git bisect reset` limpou o estado? ✅

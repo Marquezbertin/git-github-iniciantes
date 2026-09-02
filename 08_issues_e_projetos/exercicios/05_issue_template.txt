@@ -1,0 +1,102 @@
+# Exercício 05 — Issue Template
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Criar templates de Issue para padronizar a criação de Issues no repositório.
+
+---
+
+## 🎯 Objetivo
+
+Automatizar a criação de Issues com estrutura padrão.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar pasta de templates
+```bash
+mkdir -p .github/ISSUE_TEMPLATE
+```
+
+### Passo 2: Criar template de bug
+```bash
+cat > .github/ISSUE_TEMPLATE/bug_report.md << 'EOF'
+---
+name: Reportar Bug
+about: Reporte um bug encontrado no projeto
+title: "[BUG] "
+labels: bug
+assignees: ''
+---
+
+## 🐛 Descreva o bug
+Uma descrição clara do bug.
+
+## 📋 Passos para reproduzir
+1. Ir para '...'
+2. Clicar em '...'
+3. Ver erro
+
+## ✅ Comportamento esperado
+O que deveria acontecer.
+
+## 📸 Screenshots
+Se aplicável, adicione screenshots.
+
+## 🖥️ Ambiente
+- OS: [Windows/macOS/Linux]
+- Git versão: [versão]
+```
+
+### Passo 3: Criar template de feature
+```bash
+cat > .github/ISSUE_TEMPLATE/feature_request.md << 'EOF'
+---
+name: Sugerir Funcionalidade
+about: Sugira uma nova funcionalidade
+title: "[FEATURE] "
+labels: enhancement
+assignees: ''
+---
+
+## 💡 Descrição
+Descreva a funcionalidade desejada.
+
+## 🎯 Motivo
+Por que isso seria útil?
+
+## 📝 Como implementar
+Sugestões de implementação.
+```
+
+### Passo 4: Commit e push
+```bash
+git add .github/
+git commit -m "Adicionar templates de Issue"
+git push
+```
+
+### Passo 5: Testar
+No GitHub, ao criar Issue, os templates devem aparecer como opções.
+
+### Passo 6: Documentar
+Crie `templates_criados.txt`:
+```
+Templates criados: [lista]
+Localização: .github/ISSUE_TEMPLATE/
+Funcionando: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. A pasta .github/ISSUE_TEMPLATE existe? ✅
+2. Os templates aparecem ao criar Issue? ✅
+3. Cada template tem frontmatter YAML? ✅
+4. O push foi realizado? ✅

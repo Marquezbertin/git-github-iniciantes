@@ -1,0 +1,79 @@
+# Exercício 03 — Descrição de PR
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Escrever uma descrição completa e profissional para um Pull Request.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a documentar PRs de forma clara para facilitar o code review.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar uma mudança significativa
+```bash
+git checkout -b adicionar-exercicio-03
+
+echo "# Exercício 03" > exercicio-03.txt
+echo "" >> exercicio-03.txt
+echo "## Descrição" >> exercicio-03.txt
+echo "Este exercício pratica a escrita de PRs." >> exercicio-03.txt
+
+git add . && git commit -m "Adicionar exercício 03"
+git push -u origin adicionar-exercicio-03
+```
+
+### Passo 2: Criar PR com descrição completa
+No GitHub, use este template:
+
+```markdown
+## 📋 Descrição
+Adiciona o exercício 03 ao módulo de Pull Requests.
+
+## 🎯 O que foi feito
+- [x] Criado arquivo exercicio-03.txt
+- [x] Adicionada descrição do exercício
+- [ ] Adicionados comandos de prática
+
+## 🧪 Como testar
+1. Clone o repositório
+2. Veja o arquivo exercicio-03.txt
+3. Verifique que o conteúdo está correto
+
+## 📸 Screenshots
+(N/A)
+
+## 🔗 Issue relacionada
+Closes #1
+
+## 📝 Checklist
+- [ ] Código funciona
+- [ ] Documentação atualizada
+- [ ] Sem erros de português
+```
+
+### Passo 3: Documentar
+Crie `pr_descricao.txt`:
+```
+Título do PR: [título]
+Seções incluídas: [lista]
+Issue linkada: sim/não
+Checklist preenchido: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O PR tem título claro? ✅
+2. A descrição tem múltiplas seções? ✅
+3. Há checklist? ✅
+4. Issue foi linkada? ✅

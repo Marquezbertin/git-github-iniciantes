@@ -1,0 +1,80 @@
+# Exercício 03 — Trabalhar em Branches
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Desenvolver features em branches separadas seguindo Git Flow.
+
+---
+
+## 🎯 Objetivo
+
+Praticar o fluxo completo de desenvolvimento com branches.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar feature
+```bash
+git checkout develop
+git checkout -b feature/ler-readme
+
+echo "## Como usar" >> README.md
+echo "1. Clone o repo" >> README.md
+echo "2. Siga os exercícios" >> README.md
+
+git add . && git commit -m "Adicionar seção Como Usar ao README"
+git push -u origin feature/ler-readme
+```
+
+### Passo 2: Criar PR
+Crie PR da feature para develop no GitHub.
+
+### Passo 3: Merge
+Após review, merge o PR.
+
+### Passo 4: Criar segunda feature
+```bash
+git checkout develop
+git checkout -b feature/exercicios
+
+echo "# Exercício 1" > exercicios/01_exercicio.txt
+echo "Resolva este exercício" >> exercicios/01_exercicio.txt
+
+git add . && git commit -m "Adicionar exercício 1"
+git push -u origin feature/exercicios
+```
+
+### Passo 5: Merge na develop
+Crie PR e merge.
+
+### Passo 6: Merge develop na main
+```bash
+git checkout main
+git merge develop
+git tag -a v1.0.0 -m "Versão 1.0.0"
+git push origin main --tags
+```
+
+### Passo 7: Documentar
+Crie `branches_projeto.txt`:
+```
+Features criadas: [lista]
+PRs criados: [lista]
+PRs merged: [lista]
+Tag: v1.0.0
+Commits na main: [número]
+```
+
+---
+
+## 🔍 Verificação
+
+1. Features foram criadas da develop? ✅
+2. PRs foram criados? ✅
+3. O merge foi realizado corretamente? ✅
+4. A tag v1.0.0 existe? ✅

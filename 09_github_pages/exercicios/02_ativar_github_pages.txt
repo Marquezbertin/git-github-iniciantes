@@ -1,0 +1,52 @@
+# Exercício 02 — Ativar GitHub Pages
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Ativar GitHub Pages no repositório e publicar o site.
+
+---
+
+## 🎯 Objetivo
+
+Configurar o deploy automático do site.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Ir às Settings do repositório
+1. Clique em "Settings" (engrenagem)
+2. Vá em "Pages" (menu lateral)
+
+### Passo 2: Configurar Source
+1. Source: "Deploy from a branch"
+2. Branch: "main"
+3. Pasta: "/ (root)"
+4. Clique "Save"
+
+### Passo 3: Aguardar deploy
+Após 2-5 minutos, o site estará publicado.
+
+### Passo 4: Acessar o site
+URL: `https://SEU-USUARIO.github.io/NOME-REPO/`
+
+### Passo 5: Documentar
+Crie `pages_ativado.txt`:
+```
+Repositório: [nome]
+URL do site: https://SEU-USUARIO.github.io/NOME-REPO/
+Status: [ativo/inativo]
+Deploy automático: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O GitHub Pages está ativado? ✅
+2. O site está acessível? ✅
+3. O HTML renderiza corretamente? ✅

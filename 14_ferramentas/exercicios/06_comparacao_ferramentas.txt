@@ -1,0 +1,58 @@
+# Exercício 06 — Comparação de Ferramentas
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Comparar as diferentes ferramentas Git e decidir qual usar para cada situação.
+
+---
+
+## 🎯 Objetivo
+
+Ter clareza sobre quando usar cada ferramenta.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Testar cada ferramenta
+Realize a mesma tarefa (criar repo, branch, commit, push) em:
+1. Terminal puro
+2. VS Code
+3. GitHub Desktop
+4. GitHub CLI
+
+### Passo 2: Criar tabela comparativa
+Crie `comparacao_ferramentas.txt`:
+```
+=== COMPARAÇÃO DE FERRAMENTAS ===
+
+| Critério | Terminal | VS Code | Desktop | GH CLI |
+|----------|----------|---------|---------|--------|
+| Velocidade | [1-5] | [1-5] | [1-5] | [1-5] |
+| Facilidade | [1-5] | [1-5] | [1-5] | [1-5] |
+| Visual | [1-5] | [1-5] | [1-5] | [1-5] |
+| Funcionalidades | [1-5] | [1-5] | [1-5] | [1-5] |
+| Aprendizado | [1-5] | [1-5] | [1-5] | [1-5] |
+
+Recomendações:
+- Para iniciantes: [ferramenta]
+- Para produtividade: [ferramenta]
+- Para colaboração: [ferramenta]
+- Para automação: [ferramenta]
+```
+
+### Passo 3: Responder
+Qual ferramenta você mais usará e por quê?
+
+---
+
+## 🔍 Verificação
+
+1. Testou as 4 ferramentas? ✅
+2. Criou a tabela comparativa? ✅
+3. Deu recomendações? ✅
+4. Definiu sua preferência? ✅

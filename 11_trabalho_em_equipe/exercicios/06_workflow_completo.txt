@@ -1,0 +1,72 @@
+# Exercício 06 — Workflow Completo
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Executar um ciclo completo de desenvolvimento em equipe: issue → branch → commit → PR → review → merge.
+
+---
+
+## 🎯 Objetivo
+
+Integrar todos os conceitos de trabalho em equipe em um fluxo real.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar Issue
+No GitHub, crie uma Issue descrevendo uma feature.
+
+### Passo 2: Branch e commit
+```bash
+git checkout main
+git pull
+git checkout -b feature/issue-XX
+# Implementar...
+git add . && git commit -m "Resolver Issue #XX"
+git push -u origin feature/issue-XX
+```
+
+### Passo 3: Criar PR
+Crie PR com descrição completa, linkando a Issue.
+
+### Passo 4: Review
+Peça para um colega revisar (ou revise o PR de outro).
+
+### Passo 5: Merge e cleanup
+```bash
+# Após merge via GitHub:
+git checkout main
+git pull
+git branch -d feature/issue-XX
+```
+
+### Passo 6: Documentar
+Crie `workflow_final.txt`:
+```
+=== WORKFLOW COMPLETO ===
+
+Issue: #XX
+Branch: feature/issue-XX
+Commits: [número]
+PR: [URL]
+Reviewer: [nome]
+Merge: sim/não
+Branch limpa: sim/não
+Lições: [lista]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Issue foi criada? ✅
+2. A branch foi criada da main atualizada? ✅
+3. O PR tem descrição completa? ✅
+4. O review foi feito? ✅
+5. O merge foi realizado? ✅
+6. A branch foi limpa? ✅

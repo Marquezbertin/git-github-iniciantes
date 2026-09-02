@@ -1,0 +1,82 @@
+# Exercício 04 — Tags
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar tags leves e anotadas para marcar versões do projeto.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a usar tags para gerenciar versões de software.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir tags-teste
+cd tags-teste
+git init
+
+echo "v1" > app.txt
+git add . && git commit -m "Versão 1.0"
+```
+
+### Passo 2: Criar tag leve
+```bash
+git tag v1.0
+```
+
+### Passo 3: Criar mais commits
+```bash
+echo "v2" >> app.txt
+git add . && git commit -m "Versão 2.0"
+
+echo "v3" >> app.txt
+git add . && git commit -m "Versão 3.0"
+```
+
+### Passo 4: Criar tag anotada
+```bash
+git tag -a v3.0 -m "Versão 3.0 - Adicionado novo recurso"
+```
+
+### Passo 5: Listar e verificar
+```bash
+git tag
+git tag -n
+git show v1.0
+git show v3.0
+```
+
+### Passo 6: Voltar a uma tag
+```bash
+git checkout v1.0
+cat app.txt
+git checkout main
+```
+
+### Passo 7: Documentar
+Crie `tags_info.txt`:
+```
+Tags criadas: v1.0 (leve), v3.0 (anotada)
+Commits totais: 3
+Tag v1.0: [descrição]
+Tag v3.0: [descrição]
+Checkout para v1.0: [conteúdo]
+```
+
+---
+
+## 🔍 Verificação
+
+1. Tags foram criadas? ✅
+2. `git tag -n` mostra as mensagens? ✅
+3. `git checkout v1.0` volta ao estado anterior? ✅
+4. Tag anotada tem mensagem detalhada? ✅

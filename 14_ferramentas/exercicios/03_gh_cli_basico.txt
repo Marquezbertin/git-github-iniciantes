@@ -1,0 +1,73 @@
+# Exercício 03 — GitHub CLI Básico
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Instalar e configurar o GitHub CLI para operações GitHub no terminal.
+
+---
+
+## 🎯 Objetivo
+
+Usar o gh para criar repos, Issues e PRs sem sair do terminal.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Instalar gh
+```bash
+# Windows
+winget install GitHub.cli
+
+# macOS
+brew install gh
+```
+
+### Passo 2: Autenticar
+```bash
+gh auth login
+# Siga as instruções na tela
+```
+
+### Passo 3: Verificar
+```bash
+gh auth status
+```
+
+### Passo 4: Criar repositório
+```bash
+gh repo create meu-repo-gh --public --description "Repo criado com GH CLI"
+```
+
+### Passo 5: Criar Issue
+```bash
+gh issue create --title "Teste via CLI" --body "Issue criada usando GitHub CLI"
+```
+
+### Passo 6: Listar Issues
+```bash
+gh issue list
+```
+
+### Passo 7: Documentar
+Crie `gh_cli_basico.txt`:
+```
+GitHub CLI instalado: sim/não
+Autenticado: sim/não
+Repositório criado: [nome]
+Issue criada: sim/não
+Issues listadas: [número]
+```
+
+---
+
+## 🔍 Verificação
+
+1. `gh auth status` mostra autenticado? ✅
+2. `gh repo create` cria o repositório? ✅
+3. `gh issue create` cria a Issue? ✅
+4. `gh issue list` lista Issues? ✅

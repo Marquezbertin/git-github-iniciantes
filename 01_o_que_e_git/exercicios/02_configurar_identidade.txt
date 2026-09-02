@@ -1,0 +1,72 @@
+# Exercício 02 — Configurar Identidade
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Configurar seu nome e email no Git. Essas informações são usadas em todos os commits que você criar.
+
+---
+
+## 🎯 Objetivo
+
+Definir sua identidade Git corretamente para que seus commits tenham autoria reconhecível.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Configurar seu nome
+```bash
+git config --global user.name "Seu Nome Completo"
+```
+
+Substitua "Seu Nome Completo" pelo seu nome real.
+
+### Passo 2: Configurar seu email
+```bash
+git config --global user.email "seu@email.com"
+```
+
+Substitua "seu@email.com" pelo email que você usa (ou vai usar) no GitHub.
+
+### Passo 3: Verificar se foi salvo
+```bash
+git config --global user.name
+git config --global user.email
+```
+
+### Passo 4: Criar arquivo de comprovação
+Crie `configuracao_salva.txt` com o conteúdo:
+```
+Meu nome no Git: [o que configurou]
+Meu email no Git: [o que configurou]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git config --global user.name
+Seu Nome Completo
+
+$ git config --global user.email
+seu@email.com
+```
+
+---
+
+## 🔍 Verificação
+
+1. `git config --global user.name` retorna seu nome? ✅
+2. `git config --global user.email` retorna seu email? ✅
+3. Você criou o arquivo de comprovação? ✅
+
+---
+
+## 💡 Dica
+
+Use o mesmo email do GitHub para que seus commits sejam associados à sua conta automaticamente.

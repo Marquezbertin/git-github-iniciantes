@@ -1,0 +1,72 @@
+# Exercício 01 — Configurar Remote
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar um repositório no GitHub e conectar o repositório local ao remote.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a adicionar, verificar e gerenciar remotes no Git.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório local
+```bash
+mkdir meu-repo-remote
+cd meu-repo-remote
+git init
+
+echo "# Meu Projeto" > README.md
+git add . && git commit -m "Commit inicial"
+```
+
+### Passo 2: Criar repositório no GitHub
+1. Acesse https://github.com/new
+2. Nome: `meu-repo-remote`
+3. NÃO marque "Add README" (já temos um)
+4. Clique em "Create repository"
+
+### Passo 3: Adicionar remote
+```bash
+git remote add origin https://github.com/SEU-USUARIO/meu-repo-remote.git
+```
+
+### Passo 4: Verificar
+```bash
+git remote -v
+```
+
+### Passo 5: Documentar
+Crie `remote_configurado.txt`:
+```
+Remote: origin
+URL: https://github.com/SEU-USUARIO/meu-repo-remote.git
+Fetch URL: [url do fetch]
+Push URL: [url do push]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git remote -v
+origin  https://github.com/SEU-USUARIO/meu-repo-remote.git (fetch)
+origin  https://github.com/SEU-USUARIO/meu-repo-remote.git (push)
+```
+
+---
+
+## 🔍 Verificação
+
+1. O remote foi adicionado? ✅
+2. `git remote -v` mostra a URL correta? ✅
+3. Criou o arquivo de documentação? ✅

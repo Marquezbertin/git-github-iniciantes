@@ -1,0 +1,55 @@
+# Exercício 01 — VS Code + Git
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Usar o Git integrado no VS Code para gerenciar repositórios.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer as funcionalidades Git do VS Code.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Abrir VS Code
+Abra uma pasta com repositório Git no VS Code.
+
+### Passo 2: Explorar Source Control
+1. Clique no ícone de Source Control (ou Ctrl+Shift+G)
+2. Veja os arquivos modificados
+3. Clique em "+" para adicionar ao staging
+4. Digite mensagem e clique em "Commit"
+
+### Passo 3: Usar o branch indicator
+1. Clique no nome da branch (canto inferior esquerdo)
+2. Veja todas as branches
+3. Crie uma nova branch
+
+### Passo 4: Ver diff visual
+1. Clique em um arquivo modificado
+2. Veja as mudanças lado a lado (verde = adicionado, vermelho = removido)
+
+### Passo 5: Documentar
+Crie `vscode_git.txt`:
+```
+VS Code usado: sim/não
+Source Control: [funcionalidades testadas]
+Branch indicator: [funcionalidades testadas]
+Diff visual: [funcionalidades testadas]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O Source Control mostra arquivos modificados? ✅
+2. Consegue commitar pelo VS Code? ✅
+3. O diff visual funciona? ✅
+4. Consegue criar branches? ✅

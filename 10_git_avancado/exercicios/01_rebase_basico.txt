@@ -1,0 +1,74 @@
+# Exercício 01 — Rebase Básico
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar rebase para manter o histórico linear ao sincronizar branches.
+
+---
+
+## 🎯 Objetivo
+
+Entender como rebase funciona comparado com merge.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário
+```bash
+mkdir rebase-basico
+cd rebase-basico
+git init
+
+echo "Base" > app.txt
+git add . && git commit -m "Commit base"
+```
+
+### Passo 2: Criar feature
+```bash
+git checkout -b feature
+echo "Feature 1" >> app.txt
+git add . && git commit -m "Feature 1"
+echo "Feature 2" >> app.txt
+git add . && git commit -m "Feature 2"
+```
+
+### Passo 3: Adicionar commit na main
+```bash
+git checkout main
+echo "Fix urgente" >> app.txt
+git add . && git commit -m "Fix urgente"
+```
+
+### Passo 4: Rebase
+```bash
+git checkout feature
+git rebase main
+```
+
+### Passo 5: Verificar
+```bash
+git log --oneline --graph
+```
+
+### Passo 6: Documentar
+Crie `rebase_basico.txt`:
+```
+Commits na feature antes do rebase: 2
+Commits na main: 1
+Commits na feature após rebase: [número]
+Histórico linear: sim/não
+Conflitos: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O rebase criou histórico linear? ✅
+2. Os commits da feature ficam "acima" dos da main? ✅
+3. Não há commits de merge? ✅

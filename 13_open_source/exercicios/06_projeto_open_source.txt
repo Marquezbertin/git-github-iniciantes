@@ -1,0 +1,86 @@
+# Exercício 06 — Projeto Open Source
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Criar um projeto open source completo com todas as documentações necessárias.
+
+---
+
+## 🎯 Objetivo
+
+Montar um projeto open source profissional, pronto para receber contribuições.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar estrutura
+```bash
+mkdir meu-projeto-opensource
+cd meu-projeto-opensource
+git init
+```
+
+### Passo 2: Criar arquivos essenciais
+```bash
+# README.md
+# CONTRIBUTING.md
+# CODE_OF_CONDUCT.md
+# LICENSE (MIT)
+# .github/ISSUE_TEMPLATE/ (bug_report.md, feature_request.md)
+# .github/PULL_REQUEST_TEMPLATE.md
+# .github/workflows/ci.yml
+```
+
+### Passo 3: Criar CONTRIBUTING.md completo
+Siga o template do exercício 04.
+
+### Passo 4: Criar CODE_OF_CONDUCT.md
+Use o Contributor Covenant: https://www.contributor-covenant.org/pt-br/
+
+### Passo 5: Criar templates
+Siga o template do Módulo 08.
+
+### Passo 6: Criar CI
+Siga o template do Módulo 12.
+
+### Passo 7: Push ao GitHub
+```bash
+gh repo create meu-projeto-opensource --public
+git add .
+git commit -m "Projeto open source completo"
+git push -u origin main
+```
+
+### Passo 8: Documentar
+Crie `opensource_completo.txt`:
+```
+=== PROJETO OPEN SOURCE ===
+
+Arquivos criados:
+- README.md: sim/não
+- CONTRIBUTING.md: sim/não
+- CODE_OF_CONDUCT.md: sim/não
+- LICENSE: sim/não
+- Issue templates: sim/não
+- PR template: sim/não
+- CI workflow: sim/não
+
+Repositório: [URL]
+Pronto para contribuições: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Todos os arquivos essenciais existem? ✅
+2. O README é claro e informativo? ✅
+3. O CONTRIBUTING explica como contribuir? ✅
+4. A licença está definida? ✅
+5. Templates estão configurados? ✅
+6. CI está funcionando? ✅

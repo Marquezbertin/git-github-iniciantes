@@ -1,0 +1,57 @@
+# Exercício 03 — Milestone
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar uma Milestone e associar Issues a ela para acompanhar progresso.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a agrupar tarefas em entregas com prazo e progresso.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar Milestone
+1. Aba "Issues" → "Milestones"
+2. "New milestone"
+3. Título: "v1.0 - Módulos Básicos"
+4. Descrição: "Completar todos os módulos de iniciante"
+5. Data: 2 semanas a partir de hoje
+
+### Passo 2: Associar Issues à Milestone
+1. Abra uma Issue existente
+2. Clique no ícone de engrenagem ao lado de "Milestone"
+3. Selecione "v1.0 - Módulos Básicos"
+
+### Passo 3: Criar Issue já na Milestone
+```bash
+gh issue create --title "Completar módulo 01" --milestone "v1.0 - Módulos Básicos"
+```
+
+### Passo 4: Ver progresso
+Na Milestone, veja a barra de progresso: X de Y Issues concluídas.
+
+### Passo 5: Documentar
+Crie `milestone_info.txt`:
+```
+Milestone: v1.0 - Módulos Básicos
+Data limite: [data]
+Issues totais: [número]
+Issues fechadas: [número]
+Progresso: [percentual]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Milestone foi criada? ✅
+2. Issues estão associadas? ✅
+3. O progresso é visível? ✅

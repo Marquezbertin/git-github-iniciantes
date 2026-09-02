@@ -1,0 +1,55 @@
+# Exercício 02 — Usar Labels
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar labels customizadas e aplicá-las a Issues.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a categorizar Issues para facilitar a organização do projeto.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar labels customizadas
+1. Aba "Issues" → "Labels"
+2. "New label"
+3. Crie:
+   - `prioridade-baixa` (cor: verde claro)
+   - `prioridade-media` (cor: amarelo)
+   - `prioridade-alta` (cor: vermelho)
+   - `exercício` (cor: azul)
+
+### Passo 2: Criar Issues com labels
+```bash
+# Via terminal com GitHub CLI
+gh issue create --title "Exercício de git log" --label "exercício,prioridade-media"
+gh issue create --title "Corrigir link quebrado" --label "bug,prioridade-alta"
+gh issue create --title "Adicionar dicas extras" --label "exercício,prioridade-baixa"
+```
+
+### Passo 3: Filtrar por label
+No GitHub, use o filtro: `label:"prioridade-alta"`
+
+### Passo 4: Documentar
+Crie `labels_criadas.txt`:
+```
+Labels criadas: [lista]
+Issues com prioridade-alta: [quantidade]
+Issues com exercício: [quantidade]
+```
+
+---
+
+## 🔍 Verificação
+
+1. As labels foram criadas? ✅
+2. As Issues estão categorizadas? ✅
+3. O filtro por label funciona? ✅

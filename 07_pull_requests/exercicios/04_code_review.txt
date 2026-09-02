@@ -1,0 +1,69 @@
+# Exercício 04 — Code Review
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Revisar um Pull Request de outro colega, deixando comentários constructivos.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a fazer code review: identificar problemas, sugerir melhorias e dar feedback positivo.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Encontre um PR para revisar
+1. Acesse o repositório do curso
+2. Vá na aba "Pull Requests"
+3. Escolha um PR aberto
+
+### Passo 2: Leia o código
+- Veja cada arquivo alterado
+- Entenda o que foi modificado
+- Verifique se faz sentido
+
+### Passo 3: Deixe comentários
+Na aba "Files changed", comente:
+
+**Exemplos de comentários:**
+```
+👍 Boa escolha de variável!
+
+💡 Sugestão: poderia usar const em vez de let aqui
+
+⚠️ Atenção: este código pode causar erro se o arquivo não existir
+
+❌ Precisa de tratamento de erro
+
+❓ Por que usou este método em vez de outro?
+```
+
+### Passo 4: Aprovar ou solicitar mudanças
+- Se está tudo ok: "Approve"
+- Se precisa de correções: "Request changes"
+- Se tem dúvidas: "Comment"
+
+### Passo 5: Documentar
+Crie `code_review.txt`:
+```
+PR revisado: [#número]
+Arquivos revisados: [quantidade]
+Comentários deixados: [quantidade]
+Decisão: [Approve / Request Changes / Comment]
+Aprendizados: [o que aprendeu revisando]
+```
+
+---
+
+## 🔍 Verificação
+
+1. Você revisou pelo menos 1 PR? ✅
+2. Deixou comentários construtivos? ✅
+3. Tomou uma decisão (approve/request/comment)? ✅
+4. Documentou o que aprendeu? ✅

@@ -1,0 +1,86 @@
+# Exercício 01 — Criar Primeiro Repositório
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar um novo repositório Git do zero e verificar que foi inicializado corretamente.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a inicializar um repositório Git e entender o que a pasta `.git` significa.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar a pasta do projeto
+```bash
+mkdir meu-primeiro-repo
+cd meu-primeiro-repo
+```
+
+### Passo 2: Inicializar o Git
+```bash
+git init
+```
+
+### Passo 3: Verificar que foi criado
+```bash
+# No Linux/macOS
+ls -la
+
+# No Windows PowerShell
+Get-ChildItem -Force
+```
+
+Você deve ver uma pasta `.git` — isso significa que o repositório foi criado!
+
+### Passo 4: Verificar o status
+```bash
+git status
+```
+
+### Passo 5: Documentar
+Crie `repo_criado.txt`:
+```
+Pasta criada: meu-primeiro-repo
+Comando usado: git init
+Pasta .git existe: sim/não
+Mensagem do git status: [o que apareceu]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git init
+Initialized empty Git repository in /caminho/meu-primeiro-repo/.git/
+
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create copy or use "git add" to track)
+```
+
+---
+
+## 🔍 Verificação
+
+1. A pasta `.git` foi criada? ✅
+2. `git init` retornou mensagem de sucesso? ✅
+3. `git status` mostra "No commits yet"? ✅
+4. Criou o arquivo de documentação? ✅
+
+---
+
+## 💡 Dica
+
+NUNCA delete a pasta `.git` manualmente — ela contém todo o histórico do seu projeto. Se quiser remover o Git, use `rm -rf .git` (com cuidado!).

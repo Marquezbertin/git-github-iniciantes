@@ -1,0 +1,63 @@
+# Exercício 04 — Review de PR
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar code review usando GitHub CLI.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a revisar PRs via terminal.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Listar PRs abertos
+```bash
+gh pr list
+```
+
+### Passo 2: Ver detalhes de um PR
+```bash
+gh pr view [número-do-pr]
+```
+
+### Passo 3: Ver mudanças
+```bash
+gh pr diff [número-do-pr]
+```
+
+### Passo 4: Aprovar ou comentar
+```bash
+# Aprovar
+gh pr review [número-do-pr] --approve --body "Código aprovado!"
+
+# Solicitar mudanças
+gh pr review [número-do-pr] --request-changes --body "Precisa de correção na linha X"
+
+# Comentar
+gh pr review [número-do-pr] --comment --body "Boa implementação!"
+```
+
+### Passo 5: Documentar
+Crie `review_cli.txt`:
+```
+PRs listados: [número]
+PR revisado: [número do PR]
+Comentário: [o que disse]
+Decisão: [approve/request-changes/comment]
+```
+
+---
+
+## 🔍 Verização
+
+1. `gh pr list` mostra PRs? ✅
+2. `gh pr diff` mostra mudanças? ✅
+3. O review foi registrado? ✅

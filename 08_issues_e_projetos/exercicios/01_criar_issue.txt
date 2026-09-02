@@ -1,0 +1,65 @@
+# Exercício 01 — Criar Issue
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar sua primeira Issue no GitHub descrevendo um bug ou funcionalidade.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer a interface de Issues e praticar a escrita de Issues claras.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Ir à aba Issues
+No repositório, clique em "Issues" → "New issue"
+
+### Passo 2: Preencher título
+Exemplo: "Adicionar exercício sobre git blame"
+
+### Passo 3: Preencher descrição
+```markdown
+## 📋 Descrição
+Gostaria que fosse adicionado um exercício sobre o comando `git blame`.
+
+## 🎯 Objetivo
+Aprender a identificar quem alterou cada linha de um arquivo.
+
+## 📝 Passo a passo sugerido
+1. Criar um arquivo com múltiplos commits
+2. Usar `git blame arquivo.txt`
+3. Interpretar a saída
+
+## ✅ Critérios de aceite
+- [ ] Exercício criado
+- [ ] Comandos documentados
+- [ ] Verificação incluída
+```
+
+### Passo 4: Criar Issue
+Clique em "Submit new issue"
+
+### Passo 5: Documentar
+Crie `minha_issue.txt`:
+```
+Título da Issue: [título]
+Tipo: [bug/feature/documentação]
+Issue criada: sim/não
+URL: [url da issue]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Issue foi criada? ✅
+2. Tem título claro? ✅
+3. Tem descrição detalhada? ✅
+4. Criou o arquivo de documentação? ✅

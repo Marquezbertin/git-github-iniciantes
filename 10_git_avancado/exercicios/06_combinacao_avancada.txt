@@ -1,0 +1,100 @@
+# Exercício 06 — Combinação Avançada
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Combinar rebase, cherry-pick, tags e bisect em um cenário realista de desenvolvimento.
+
+---
+
+## 🎯 Objetivo
+
+Integrar todas as técnicas avançadas em um fluxo de trabalho complexo.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar projeto com histórico complexo
+```bash
+mkdir projeto-avancado
+cd projeto-avancado
+git init
+
+echo "v0.1" > app.txt
+git add . && git commit -m "v0.1 - Estrutura inicial"
+
+git tag -a v0.1 -m "Versão 0.1"
+
+echo "Feature A" >> app.txt
+git add . && git commit -m "Feature A completa"
+
+echo "BUG" > bug.txt
+git add . && git commit -m "Bug introduzido"
+
+echo "Feature B" >> app.txt
+git add . && git commit -m "Feature B completa"
+
+echo "Fix do bug" > bug.txt
+git add . && git commit -m "Fix: corrigir bug"
+
+git tag -a v1.0 -m "Versão 1.0 estável"
+```
+
+### Passo 2: Usar bisect para encontrar o bug
+```bash
+git bisect start
+git bisect bad HEAD
+git bisect good v0.1
+# Testar e encontrar o commit
+git bisect reset
+```
+
+### Passo 3: Criar branch de hotfix
+```bash
+git checkout v0.1
+git checkout -b hotfix/bug-urgente
+echo "Correção urgente" > hotfix.txt
+git add . && git commit -m "Hotfix: correção de segurança"
+git tag -a v0.1.1 -m "Hotfix v0.1.1"
+```
+
+### Passo 4: Cherry-pick o hotfix para a main
+```bash
+git checkout main
+git cherry-pick [hash-do-hotfix]
+```
+
+### Passo 5: Rebase para limpar histórico
+```bash
+git checkout main
+git rebase -i HEAD~5
+# Reorganizar commits para ficar mais limpo
+```
+
+### Passo 6: Documentar
+Crie `avancado_final.txt`:
+```
+=== PROJETO AVANÇADO ===
+
+Bisect: commit bug encontrado em [hash]
+Hotfix: branch criada a partir de v0.1
+Cherry-pick: hotfix aplicado na main
+Rebase: histórico limpo com [número] commits
+Tags: v0.1, v0.1.1, v1.0
+Commits finais: [número]
+Status: [organizado]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O bisect encontrou o commit bug? ✅
+2. O hotfix foi criado e taggeado? ✅
+3. O cherry-pick trouxe o fix? ✅
+4. O rebase limpou o histórico? ✅
+5. Todas as tags existem? ✅

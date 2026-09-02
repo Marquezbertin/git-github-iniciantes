@@ -1,0 +1,100 @@
+# Exercício 04 — Template Responsivo
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um site responsivo que funcione em desktop e celular usando CSS media queries.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a tornar o site acessível em diferentes tamanhos de tela.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar CSS responsivo
+```css
+/* styles.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #2563eb;
+    color: white;
+    padding: 1rem 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .card-grid { grid-template-columns: 1fr; }
+    header { text-align: center; }
+}
+```
+
+### Passo 2: Atualizar HTML com cards
+```html
+<div class="card-grid">
+    <div class="card">
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto 1</p>
+    </div>
+    <div class="card">
+        <h3>Projeto 2</h3>
+        <p>Descrição do projeto 2</p>
+    </div>
+    <div class="card">
+        <h3>Projeto 3</h3>
+        <p>Descrição do projeto 3</p>
+    </div>
+</div>
+```
+
+### Passo 3: Commit e push
+```bash
+git add .
+git commit -m "Tornar site responsivo"
+git push
+```
+
+### Passo 4: Documentar
+Crie `responsivo.txt`:
+```
+Media queries usadas: max-width: 768px
+Grid responsivo: sim/não
+Funciona em mobile: sim/não
+Funciona em desktop: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O site funciona em tela grande? ✅
+2. Em tela pequena, os cards ficam em coluna única? ✅
+3. A navegação funciona em mobile? ✅
+4. O CSS foi commitado? ✅

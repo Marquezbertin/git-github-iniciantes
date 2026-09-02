@@ -1,0 +1,80 @@
+# Exercício 01 — Primeiro Workflow
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um workflow simples do GitHub Actions que executa um comando básico.
+
+---
+
+## 🎯 Objetivo
+
+Conceber a estrutura de um workflow e entender como funciona.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar pasta de workflows
+```bash
+mkdir -p .github/workflows
+```
+
+### Passo 2: Criar workflow
+```yaml
+# .github/workflows/hello.yml
+name: Hello World
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer olá
+        run: echo "Olá do GitHub Actions!"
+      
+      - name: Mostrar data
+        run: date
+      
+      - name: Mostrar diretório
+        run: ls -la
+```
+
+### Passo 3: Commit e push
+```bash
+git add .github/
+git commit -m "Adicionar primeiro workflow"
+git push
+```
+
+### Passo 4: Verificar
+1. Vá à aba "Actions" no GitHub
+2. Veja o workflow rodando
+3. Verifique os logs
+
+### Passo 5: Documentar
+Crie `workflow_criado.txt`:
+```
+Nome: Hello World
+Trigger: push e pull_request
+Jobs: 1 (say-hello)
+Passos: 3
+Status: [sucesso/erro]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A pasta .github/workflows existe? ✅
+2. O workflow aparece na aba Actions? ✅
+3. A execução foi bem-sucedida? ✅
+4. Os logs mostram "Olá do GitHub Actions!"? ✅

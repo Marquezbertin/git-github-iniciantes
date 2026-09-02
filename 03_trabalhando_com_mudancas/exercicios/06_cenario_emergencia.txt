@@ -1,0 +1,89 @@
+# Exercício 06 — Cenário de Emergência
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Resolver um cenário realista de emergência usando múltiplos comandos do módulo: diff, stash, restore e reset.
+
+---
+
+## 🎯 Objetivo
+
+Usar todos os comandos em conjunto para resolver problemas reais de trabalho.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário
+```bash
+mkdir emergencia
+cd emergencia
+git init
+
+echo "Sistema de Vendas v1" > sistema.txt
+echo "Módulo Financeiro" >> sistema.txt
+git add . && git commit -m "Versão estável do sistema"
+
+echo "Nova feature em desenvolvimento" >> sistema.txt
+git add sistema.txt
+git commit -m "Adicionar feature nova"
+```
+
+### Passo 2: Emergência! Precisa voltar ao estado anterior
+```bash
+# Ver o que mudou
+git diff HEAD~1
+
+# Guardar a feature (stash)
+git stash push -m "Feature em desenvolvimento"
+
+# Voltar à versão estável
+git reset --hard HEAD~1
+git log --oneline
+```
+
+### Passo 3: Corrigir o bug
+```bash
+echo "Correção de segurança" > correcao.txt
+git add . && git commit -m "Corrigir bug de segurança"
+```
+
+### Passo 4: Voltar com a feature
+```bash
+git stash pop
+git status
+```
+
+### Passo 5: Verificar tudo
+```bash
+git log --oneline --all
+git diff
+```
+
+### Passo 6: Documentar
+Crie `relatorio_emergencia.txt`:
+```
+=== RELATÓRIO DE EMERGÊNCIA ===
+
+1. Commits iniciais: [quantos]
+2. Feature guardada com: git stash push -m "..."
+3. Voltou com: git reset --hard HEAD~1
+4. Correção commitada como: "Corrigir bug de segurança"
+5. Feature restaurada com: git stash pop
+6. Commits finais: [quantos]
+7. Estado final do repositório: [limpo/pendências]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A feature foi preservada no stash? ✅
+2. O bug foi corrigido com commit separado? ✅
+3. A feature voltou após o stash pop? ✅
+4. O histórico está organizado? ✅
+5. Criou o relatório? ✅

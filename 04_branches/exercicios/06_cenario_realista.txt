@@ -1,0 +1,111 @@
+# Exercício 06 — Cenário Realista
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Simular um fluxo de trabalho completo de desenvolvimento: criar feature, resolver conflito, usar merge estratégico e limpar branches.
+
+---
+
+## 🎯 Objetivo
+
+Consolidar todos os conceitos de branches em um cenário que simula trabalho real em equipe.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Simular projeto "API de Usuários"
+```bash
+mkdir api-usuarios
+cd api-usuarios
+git init
+
+echo "# API de Usuários" > README.md
+echo "v1.0" > version.txt
+git add . && git commit -m "Versão 1.0 da API"
+
+echo "GET /usuarios" > endpoints.txt
+git add . && git commit -m "Adicionar endpoint de listagem"
+```
+
+### Passo 2: Criar feature de login
+```bash
+git checkout -b feature/login
+echo "POST /login" >> endpoints.txt
+git add . && git commit -m "Adicionar endpoint de login"
+echo "POST /logout" >> endpoints.txt
+git add . && git commit -m "Adicionar endpoint de logout"
+```
+
+### Passo 3: Criar bugfix na main
+```bash
+git checkout main
+echo "POST /usuarios" >> endpoints.txt
+git add . && git commit -m "Adicionar endpoint de criação de usuário"
+```
+
+### Passo 4: Merge da feature com --no-ff
+```bash
+git merge --no-ff feature/login -m "Merge: feature de login"
+```
+
+### Passo 5: Resolver possíveis conflitos
+```bash
+# Se houver conflito, resolva e continue
+git add endpoints.txt
+git commit -m "Resolver conflito de merge"
+```
+
+### Passo 6: Feature de cadastro (conflito proposital)
+```bash
+git checkout -b feature/cadastro
+echo "PUT /usuarios/:id" > cadastro.txt
+git add . && git commit -m "Adicionar endpoint de atualização"
+
+git checkout main
+echo "DELETE /usuarios/:id" > cadastro.txt
+git add . && git commit -m "Adicionar endpoint de exclusão"
+
+git merge feature/cadastro
+# Resolver conflito...
+echo "PUT /usuarios/:id (atualização)" > cadastro.txt
+echo "DELETE /usuarios/:id (exclusão)" >> cadastro.txt
+git add cadastro.txt
+git commit -m "Merge: feature de cadastro com endpoints combinados"
+```
+
+### Passo 7: Limpar branches
+```bash
+git branch -d feature/login
+git branch -d feature/cadastro
+git branch -a
+```
+
+### Passo 8: Documentar
+Crie `relatorio_final.txt`:
+```
+=== RELATÓRIO DO PROJETO API USUÁRIOS ===
+
+Branches criadas: [lista]
+Merge realizado: --no-ff
+Conflitos encontrados: [sim/não, qual arquivo]
+Conflitos resolvidos: sim/não
+Branches limpas: [lista]
+Commits finais: [número]
+Arquivos finais: [lista]
+Status: [limpo/pendências]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A feature de login foi mergeada com --no-ff? ✅
+2. O conflito de cadastro foi resolvido? ✅
+3. Todos os endpoints estão no arquivo final? ✅
+4. As branches foram limpas? ✅
+5. O histórico está organizado? ✅

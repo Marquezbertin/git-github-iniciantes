@@ -1,0 +1,76 @@
+# Exercício 05 — Perfil do GitHub
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Criar o repositório especial de perfil do GitHub (SEU-USUARIO/SEU-USUARIO) com README.md personalizado.
+
+---
+
+## 🎯 Objetivo
+
+Personalizar sua página de perfil no GitHub com uma apresentação profissional.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório com seu nome de usuário
+```bash
+# O nome do repo deve ser IGUAL ao seu usuário
+gh repo create SEU-USUARIO/SEU-USUARIO --public --description "Meu perfil GitHub"
+# Ou crie manualmente no GitHub
+```
+
+### Passo 2: Criar README.md de perfil
+```markdown
+# Olá, eu sou SEU-NOME! 👋
+
+### 🚀 Sobre mim
+- 🎓 Estudante de tecnologia
+- 💻 Aprendendo Git e GitHub
+- 🌱 Participante do Laboratório Tech Social
+
+### 🛠️ Tecnologias
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5)
+
+### 📊 Estatísticas
+<!-- Pode adicionar afterwards com GitHub Readme Stats -->
+
+### 📫 Contato
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin)](https://linkedin.com)
+```
+
+### Passo 3: Push
+```bash
+git add README.md
+git commit -m "Adicionar perfil do GitHub"
+git push
+```
+
+### Passo 4: Verificar
+Visite https://github.com/SEU-USUARIO
+
+### Passo 5: Documentar
+Crie `perfil_criado.txt`:
+```
+Repositório: SEU-USUARIO/SEU-USUARIO
+Elementos do perfil: [lista]
+Badges usados: [lista]
+Perfil visível: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O repositório se chama igual ao usuário? ✅
+2. O README aparece na página do perfil? ✅
+3. Os badges renderizam? ✅
+4. O perfil está público? ✅

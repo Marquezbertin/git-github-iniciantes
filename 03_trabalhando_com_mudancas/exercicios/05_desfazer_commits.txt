@@ -1,0 +1,120 @@
+# Exercício 05 — Desfazer Commits
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Praticar diferentes formas de desfazer commits usando `git reset` em modo soft, mixed e hard.
+
+---
+
+## 🎯 Objetivo
+
+Entender as diferenças entre os modos de reset e quando usar cada um.
+
+---
+
+## ⚠️ Atenção
+
+Este exercício usa `git reset --hard` que **perde dados**. Use apenas em repositórios de teste!
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário com 4 commits
+```bash
+mkdir reset-teste
+cd reset-teste
+git init
+
+echo "v1" > arquivo.txt
+git add . && git commit -m "Commit 1: v1"
+
+echo "v2" > arquivo.txt
+git add . && git commit -m "Commit 2: v2"
+
+echo "v3" > arquivo.txt
+git add . && git commit -m "Commit 3: v3"
+
+echo "v4" > arquivo.txt
+git add . && git commit -m "Commit 4: v4"
+```
+
+### Passo 2: Reset --soft (volta 1 commit, mantém staged)
+```bash
+git reset --soft HEAD~1
+git log --oneline
+git status
+cat arquivo.txt
+```
+
+### Passo 3: Reset mixed (volta 1 commit, remove do staged)
+```bash
+git reset HEAD~1
+git log --oneline
+git status
+```
+
+### Passo 4: Reset hard (CUIDADO — perde tudo!)
+```bash
+git reset --hard HEAD~1
+git log --oneline
+git status
+cat arquivo.txt
+```
+
+### Passo 5: Documentar cada modo
+Crie `reset_comparacao.txt`:
+```
+=== COMPARAÇÃO DOS MODOS DE RESET ===
+
+ANTES: 4 commits (v1, v2, v3, v4)
+
+--- SOFT ---
+Comando: git reset --soft HEAD~1
+Commits restantes: [número]
+Arquivo contém: [v3 ou v4?]
+Staged: sim/não
+Dados perdidos: sim/não
+
+--- MIXED ---
+Comando: git reset HEAD~1
+Commits restantes: [número]
+Arquivo contém: [v2 ou v3?]
+Staged: sim/não
+Dados perdidos: sim/não
+
+--- HARD ---
+Comando: git reset --hard HEAD~1
+Commits restantes: [número]
+Arquivo contém: [v1 ou v2?]
+Staged: sim/não
+Dados perdidos: sim/não
+
+RESUMO:
+- Soft: [descrição]
+- Mixed: [descrição]
+- Hard: [descrição]
+```
+
+---
+
+## 🔍 Verificação
+
+1. Soft mantém o arquivo com staged? ✅
+2. Mixed mantém o arquivo sem staged? ✅
+3. Hard apaga as mudanças? ✅
+4. O histórico diminuiu corretamente em cada caso? ✅
+5. Criou o arquivo de comparação? ✅
+
+---
+
+## 💡 Dica
+
+Na prática, evite `git reset --hard`. Prefira:
+- `git restore` para arquivos específicos
+- `git stash` para pausar trabalho
+- `git revert` para desfazer commits sem perder histórico

@@ -1,0 +1,89 @@
+# Exercício 06 — Fluxo Completo de Contribuição
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Executar o fluxo completo de contribuição: fork, clone, branch, commit, push, PR e review.
+
+---
+
+## 🎯 Objetivo
+
+Consolidar todo o aprendizado dos módulos anteriores em um fluxo realista.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Escolher uma Issue
+No repositório do curso, encontre uma Issue aberta e comente que vai resolvê-la.
+
+### Passo 2: Preparar ambiente
+```bash
+# Sync fork
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+
+# Criar branch
+git checkout -b resolver-issue-XX
+```
+
+### Passo 3: Implementar solução
+```bash
+# Faça as alterações necessárias
+# ...
+
+git add .
+git commit -m "Resolver Issue #XX: [descrição]"
+git push -u origin resolver-issue-XX
+```
+
+### Passo 4: Criar PR
+1. Vá ao repositório original
+2. "Compare & pull request"
+3. Preencha descrição completa
+4. Link à Issue: "Closes #XX"
+5. "Create Pull Request"
+
+### Passo 5: Esperar review e responder feedback
+```bash
+# Se precisar fazer mudanças:
+git add .
+git commit -m "Aplicar feedback do review"
+git push
+# O PR atualiza automaticamente!
+```
+
+### Passo 6: Documentar
+Crie `contribuicao_completa.txt`:
+```
+=== CONTRIBUIÇÃO COMPLETA ===
+
+Issue: #XX - [título]
+Branch: resolver-issue-XX
+Arquivos modificados: [lista]
+Commits feitos: [número]
+PR criado: [URL]
+Review recebido: sim/não
+Feedback: [resumo]
+PR merged: sim/não
+Aprendizados: [lista]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Issue foi escolhida e comentada? ✅
+2. O fork está sincronizado? ✅
+3. A branch foi criada corretamente? ✅
+4. Os commits seguem boas práticas? ✅
+5. O PR tem descrição completa? ✅
+6. A Issue está linkada? ✅
+7. O PR foi revisado? ✅
+8. Documentou tudo? ✅

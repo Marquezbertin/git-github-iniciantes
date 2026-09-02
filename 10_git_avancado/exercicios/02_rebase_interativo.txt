@@ -1,0 +1,84 @@
+# Exercício 02 — Rebase Interativo
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Usar rebase interativo para reorganizar, editar, squash e remover commits.
+
+---
+
+## 🎯 Objetivo
+
+Dominar as opções do rebase interativo para limpar o histórico.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar vários commits
+```bash
+mkdir rebase-interativo
+cd rebase-interativo
+git init
+
+echo "v1" > arquivo.txt
+git add . && git commit -m "Adicionar arquivo v1"
+
+echo "v2" >> arquivo.txt
+git add . && git commit -m "Atualizar arquivo v2"
+
+echo "v3" >> arquivo.txt
+git add . && git commit -m "Correção v3"
+
+echo "v4" >> arquivo.txt
+git add . && git commit -m "Feature v4"
+```
+
+### Passo 2: Rebase interativo
+```bash
+git rebase -i HEAD~4
+```
+
+O editor abrirá com:
+```
+pick abc1234 Adicionar arquivo v1
+pick def5678 Atualizar arquivo v2
+pick ghi9012 Correção v3
+pick jkl3456 Feature v4
+```
+
+### Passo 3: Editar o rebase
+Mude para:
+```
+pick abc1234 Adicionar arquivo v1
+squash def5678 Atualizar arquivo v2
+fixup ghi9012 Correção v3
+pick jkl3456 Feature v4
+```
+
+### Passo 4: Salvar e verificar
+```bash
+git log --oneline
+```
+
+Deve mostrar apenas 2 commits (v1+v2+v3 combinados e v4).
+
+### Passo 5: Documentar
+Crie `rebase_interativo.txt`:
+```
+Commits originais: 4
+Commits após rebase: [número]
+Squash: [quais commits foram combinados]
+Fixup: [quais foram removidos]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O rebase abriu o editor? ✅
+2. Squash combinou commits corretamente? ✅
+3. O histórico ficou limpo? ✅

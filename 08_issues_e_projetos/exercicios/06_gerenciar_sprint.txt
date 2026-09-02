@@ -1,0 +1,70 @@
+# Exercício 06 — Gerenciar Sprint
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Simular um ciclo completo de sprint usando Issues, Milestones e Project Board.
+
+---
+
+## 🎯 Objetivo
+
+Praticar a gestão ágil de projetos usando todas as ferramentas do GitHub.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar Sprint
+```bash
+# Milestone
+gh api repos/{owner}/{repo}/milestones -f title="Sprint 1" -f due_on="2026-01-15T00:00:00Z"
+```
+
+### Passo 2: Criar Issues da sprint
+```bash
+gh issue create --title "Configurar README principal" --label "exercício" --milestone "Sprint 1"
+gh issue create --title "Criar estrutura de pastas" --label "exercício" --milestone "Sprint 1"
+gh issue create --title "Adicionar exercícios módulo 1" --label "exercício" --milestone "Sprint 1"
+gh issue create --title "Testar todos os comandos" --label "exercício" --milestone "Sprint 1"
+```
+
+### Passo 3: Configurar Project Board
+Crie um board com colunas:
+- Sprint Backlog
+- Em Andamento
+- Em Revisão
+- Concluído
+
+### Passo 4: Simular trabalho
+1. Mova Issue para "Em Andamento"
+2. Crie branch e faça as mudanças
+3. Abra PR
+4. Mova para "Em Revisão"
+5. Após review, merge e fecha a Issue
+6. Mova para "Concluído"
+
+### Passo 5: Documentar
+Crie `sprint_simulada.txt`:
+```
+=== SPRINT 1 ===
+
+Duração: [data início] - [data fim]
+Issues planejadas: [número]
+Issues concluídas: [número]
+Taxa de conclusão: [percentual]
+Lições aprendidas: [lista]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A Milestone tem data limite? ✅
+2. Issues estão associadas? ✅
+3. O board reflete o progresso? ✅
+4. Issues foram fechadas com commits? ✅
+5. Documentou a sprint? ✅

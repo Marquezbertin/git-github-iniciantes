@@ -1,0 +1,112 @@
+# Exercício 01 — Usar git diff
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Aprender a comparar versões do código usando `git diff` em diferentes cenários.
+
+---
+
+## 🎯 Objetivo
+
+Interpretar a saída do `git diff` e entender o que cada símbolo significa.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório e primeiro commit
+```bash
+mkdir diff-teste
+cd diff-teste
+git init
+
+echo "Linha 1" > arquivo.txt
+echo "Linha 2" >> arquivo.txt
+echo "Linha 3" >> arquivo.txt
+
+git add . && git commit -m "Versão inicial com 3 linhas"
+```
+
+### Passo 2: Modificar o arquivo (sem adicionar)
+```bash
+echo "Linha 4" >> arquivo.txt
+
+git diff
+```
+
+### Passo 3: Adicionar ao staging e comparar
+```bash
+git add arquivo.txt
+
+git diff --staged
+```
+
+### Passo 4: Fazer commit e comparar
+```bash
+git commit -m "Adicionar linha 4"
+
+git diff HEAD~1
+```
+
+### Passo 5: Criar mais mudanças
+```bash
+echo "Linha 5" >> arquivo.txt
+git add arquivo.txt
+git commit -m "Adicionar linha 5"
+```
+
+### Passo 6: Usar --stat para ver resumo
+```bash
+git diff HEAD~2 --stat
+```
+
+### Passo 7: Documentar
+Crie `resultado_diff.txt`:
+```
+Comando: git diff (antes do add)
+Resultado: [o que apareceu]
+
+Comando: git diff --staged
+Resultado: [o que apareceu]
+
+Comando: git diff HEAD~1
+Resultado: [o que apareceu]
+
+Comando: git diff --stat
+Resultado: [o que apareceu]
+
+Símbolos:
+- significa: [explicação]
++ significa: [explicação]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git diff
+diff --git a/arquivo.txt b/arquivo.txt
++Linha 4
+
+$ git diff --staged
+diff --git a/arquivo.txt b/arquivo.txt
++Linha 4
+
+$ git diff HEAD~1
+diff --git a/arquivo.txt b/arquivo.txt
++Linha 5
+```
+
+---
+
+## 🔍 Verificação
+
+1. `git diff` mostra mudanças não staged? ✅
+2. `git diff --staged` mostra mudanças no staging? ✅
+3. `git diff HEAD~1` compara com o commit anterior? ✅
+4. Você entende o que `-` e `+` significam? ✅

@@ -1,0 +1,108 @@
+# Exercício 03 — Site Multi-página
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um site com múltiplas páginas e navegação entre elas.
+
+---
+
+## 🎯 Objetivo
+
+Expandir o site com páginas de "Sobre" e "Contato" com navegação.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar estrutura
+```bash
+mkdir pages
+```
+
+### Passo 2: Atualizar index.html com navegação
+```html
+<nav>
+    <a href="index.html">Início</a> |
+    <a href="pages/sobre.html">Sobre</a> |
+    <a href="pages/contato.html">Contato</a>
+</nav>
+```
+
+### Passo 3: Criar página Sobre
+```bash
+cat > pages/sobre.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre - Meu Site</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Início</a> |
+        <a href="sobre.html">Sobre</a> |
+        <a href="contato.html">Contato</a>
+    </nav>
+    <h1>Sobre Mim</h1>
+    <p>Sou estudante de tecnologia, aprendendo Git e GitHub.</p>
+    <p>Participante do Laboratório Tech Social.</p>
+</body>
+</html>
+EOF
+```
+
+### Passo 4: Criar página Contato
+```bash
+cat > pages/contato.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - Meu Site</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Início</a> |
+        <a href="sobre.html">Sobre</a> |
+        <a href="contato.html">Contato</a>
+    </nav>
+    <h1>Contato</h1>
+    <ul>
+        <li>GitHub: <a href="https://github.com/USUARIO">meu-perfil</a></li>
+        <li>Email: meu@email.com</li>
+    </ul>
+</body>
+</html>
+EOF
+```
+
+### Passo 5: Commit e push
+```bash
+git add .
+git commit -m "Adicionar páginas Sobre e Contato"
+git push
+```
+
+### Passo 6: Documentar
+Crie `site_multipagina.txt`:
+```
+Páginas criadas: index.html, sobre.html, contato.html
+Navegação: sim (links entre páginas)
+CSS compartilhado: sim/não
+Commit: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Todas as 3 páginas existem? ✅
+2. A navegação funciona entre elas? ✅
+3. O CSS é compartilhado? ✅
+4. As páginas estão publicadas? ✅

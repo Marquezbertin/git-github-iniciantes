@@ -1,0 +1,67 @@
+# Exercício 03 — Explorar Configurações
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Explorar todas as configurações do Git instaladas no seu computador e entender onde elas ficam salvas.
+
+---
+
+## 🎯 Objetivo
+
+Conhecer as configurações padrão do Git e entender o sistema de configuração.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Listar todas as configurações globais
+```bash
+git config --global --list
+```
+
+### Passo 2: Ver onde o arquivo de configuração está salvo
+```bash
+git config --global --list --show-origin
+```
+
+### Passo 3: Verificar uma configuração específica
+```bash
+git config --global core.autocrlf
+```
+
+### Passo 4: Criar arquivo com as descobertas
+Crie `exploracao_config.txt` respondendo:
+```
+1. Quantas configurações globais existem? [número]
+2. Onde está o arquivo de configuração global? [caminho]
+3. Qual o valor de core.autocrlf? [valor]
+4. Qual a codificação padrão do Git? [descobriu?]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git config --global --list
+user.name=Seu Nome
+user.email=seu@email.com
+core.autocrlf=true
+...
+
+$ git config --global --list --show-origin
+file:C:/Users/usuario/.gitconfig    user.name=Seu Nome
+file:C:/Users/usuario/.gitconfig    user.email=seu@email.com
+```
+
+---
+
+## 🔍 Verificação
+
+1. Você conseguiu listar as configurações? ✅
+2. Identificou o caminho do arquivo .gitconfig? ✅
+3. Criou o arquivo de descobertas? ✅

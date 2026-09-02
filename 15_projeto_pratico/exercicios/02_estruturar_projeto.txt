@@ -1,0 +1,67 @@
+# Exercício 02 — Estruturar Projeto
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar a estrutura completa de pastas e arquivos do projeto.
+
+---
+
+## 🎯 Objetivo
+
+Montar uma organização profissional do repositório.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar estrutura
+```bash
+mkdir -p src docs exercicios .github/ISSUE_TEMPLATE .github/workflows
+```
+
+### Passo 2: Criar arquivos de documentação
+```bash
+echo "Guia de uso" > docs/guia.md
+echo "Como contribuir" > CONTRIBUTING.md
+echo "Código de conduta" > CODE_OF_CONDUCT.md
+echo "MIT License" > LICENSE
+```
+
+### Passo 3: Criar templates
+Crie os templates de Issue e PR seguindo os módulos 07 e 08.
+
+### Passo 4: Criar CODEOWNERS
+```bash
+echo "* @seu-usuario" > .github/CODEOWNERS
+```
+
+### Passo 5: Commit e push
+```bash
+git checkout develop
+git add .
+git commit -m "Estrutura completa do projeto"
+git push -u origin develop
+```
+
+### Passo 6: Documentar
+Crie `estrutura_projeto.txt`:
+```
+Pastas criadas: [lista]
+Arquivos criados: [lista]
+Templates: [sim/não]
+CODEOWNERS: [sim/não]
+Commit: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. Toda a estrutura foi criada? ✅
+2. Os templates existem? ✅
+3. O CONTRIBUTING.md está completo? ✅
+4. O push foi realizado? ✅

@@ -1,0 +1,65 @@
+# Exercício 01 — Fork e Clone
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Fazer fork de um repositório e clonar seu fork localmente.
+
+---
+
+## 🎯 Objetivo
+
+Praticar o fluxo de fork + clone para contribuir em projetos de terceiros.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Escolha um repositório para fork
+Sugestão: https://github.com/laboratorio-tech-social/git-github-iniciantes
+
+### Passo 2: Clique em "Fork" no GitHub
+1. Clique no botão "Fork"
+2. Confirme o destino (sua conta)
+3. Aguarde a cópia ser criada
+
+### Passo 3: Clone seu fork
+```bash
+git clone https://github.com/SEU-USUARIO/git-github-iniciantes.git
+cd git-github-iniciantes
+```
+
+### Passo 4: Verificar remotes
+```bash
+git remote -v
+```
+
+Deve ter dois remotes:
+- `origin`: seu fork
+- `upstream`: repositório original
+
+### Passo 5: Adicionar upstream
+```bash
+git remote add upstream https://github.com/laboratorio-tech-social/git-github-iniciantes.git
+git remote -v
+```
+
+### Passo 6: Documentar
+Crie `fork_clone.txt`:
+```
+Repositório original: [url]
+Fork criado: [url do fork]
+Clone realizado: sim/não
+Remotes configurados: origin, upstream
+```
+
+---
+
+## 🔍 Verificação
+
+1. O fork existe na sua conta? ✅
+2. O clone baixou corretamente? ✅
+3. `git remote -v` mostra origin e upstream? ✅

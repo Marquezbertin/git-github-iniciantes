@@ -1,0 +1,75 @@
+# Exercício 05 — PR com Conflito
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Resolver um conflito de merge em um Pull Request, sincronizando sua branch com a main.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a resolver conflitos que surgem quando a main avança enquanto você trabalha em uma feature.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário de conflito
+```bash
+# Na main, criar algo
+git checkout main
+echo "Linha A" > conflito.txt
+git add . && git commit -m "Adicionar linha A"
+
+# Criar branch
+git checkout -b feature/conflito
+echo "Minha mudança" > conflito.txt
+git add . && git commit -m "Minha mudança na feature"
+
+# Voltar à main e adicionar conflito
+git checkout main
+echo "Mudança na main" > conflito.txt
+git add . && git commit -m "Mudança importante na main"
+```
+
+### Passo 2: Tentar merge (conflito!)
+```bash
+git checkout feature/conflito
+git merge main
+# Conflito!
+```
+
+### Passo 3: Resolver
+```bash
+echo "Resolução do conflito: linha A + minha mudança" > conflito.txt
+git add conflito.txt
+git commit -m "Resolver conflito com a main"
+```
+
+### Passo 4: Push e verificar PR
+```bash
+git push origin feature/conflito
+```
+
+### Passo 5: Documentar
+Crie `conflito_pr.txt`:
+```
+Cenário: [descrição do conflito]
+Arquivo conflitante: conflito.txt
+Resolução: [o que foi decidido]
+Conflito resolvido: sim/não
+PR atualizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O conflito foi gerado? ✅
+2. Você identificou as versões conflitantes? ✅
+3. Resolveu editando o arquivo? ✅
+4. O PR foi atualizado? ✅

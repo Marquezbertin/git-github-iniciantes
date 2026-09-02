@@ -1,0 +1,109 @@
+# Exercício 04 — Mensagens de Commit
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar a escrita de boas mensagens de commit seguindo convenções de mercado.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a escrever mensagens de commit claras, descritivas e seguindo padrões profissionais.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar um cenário realista
+```bash
+echo "# Sistema de Biblioteca" > titulo.txt
+echo "Sistema para gerenciar livros" > descricao.txt
+```
+
+### Passo 2: Fazer commits com mensagens seguindo a convenção
+```bash
+git add titulo.txt
+git commit -m "Adicionar título do projeto"
+
+git add descricao.txt
+git commit -m "Adicionar descrição do sistema de biblioteca"
+```
+
+### Passo 3: Criar um cenário com mudança
+```bash
+echo "# Sistema de Biblioteca v2" > titulo.txt
+git add titulo.txt
+git commit -m "Atualizar título para incluir versão"
+```
+
+### Passo 4: Criar e remover algo
+```bash
+echo "temp" > temporario.txt
+git add temporario.txt
+git commit -m "Adicionar arquivo temporário"
+
+git rm temporario.txt
+git commit -m "Remover arquivo temporário"
+```
+
+### Passo 5: Ver o histórico completo
+```bash
+git log --oneline
+```
+
+### Passo 6: Documentar
+Crie `boas_mensagens.txt`:
+```
+Regras para boas mensagens de commit:
+1. [regra 1]
+2. [regra 2]
+3. [regra 3]
+4. [regra 4]
+
+Exemplos de mensagens ruins:
+- [exemplo 1]
+- [exemplo 2]
+
+Exemplos de boas mensagens:
+- [exemplo 1]
+- [exemplo 2]
+
+Total de commits feitos: [número]
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git log --oneline
+a1b2c3d Remover arquivo temporário
+e4f5g6h Adicionar arquivo temporário
+i7j8k9l Atualizar título para incluir versão
+m0n1o2p Adicionar descrição do sistema de biblioteca
+q3r4s5t Adicionar título do projeto
+```
+
+---
+
+## 🔍 Verificação
+
+1. Cada commit tem uma mensagem diferente e descritiva? ✅
+2. As mensagens usam imperativo (Adicionar, Remover, Atualizar)? ✅
+3. As mensagens são curtas e claras? ✅
+4. Criou o arquivo de documentação? ✅
+
+---
+
+## 💡 Dica
+
+Convenção de mensagens:
+- **Adicionar** (Add): novo conteúdo
+- **Remover** (Remove): deletar algo
+- **Atualizar** (Update): modificar algo existente
+- **Corrigir** (Fix): bugfix
+- **Refatorar** (Refactor): reorganizar sem mudar comportamento

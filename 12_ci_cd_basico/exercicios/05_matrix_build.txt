@@ -1,0 +1,71 @@
+# Exercício 05 — Matrix Build
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Criar workflow que testa em múltiplas versões de Node.js usando matrix strategy.
+
+---
+
+## 🎯 Objetivo
+
+Testar compatibilidade com diferentes versões de runtime.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar workflow com matrix
+```yaml
+# .github/workflows/matrix.yml
+name: Matrix Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Instalar dependências
+        run: npm install
+      
+      - name: Rodar testes
+        run: node teste.js
+```
+
+### Passo 2: Verificar
+Na aba Actions, veja 3 jobs rodando em paralelo (Node 18, 20, 22).
+
+### Passo 3: Documentar
+Crie `matrix_config.txt`:
+```
+Versões testadas: 18, 20, 22
+Jobs em paralelo: 3
+Runner: ubuntu-latest
+Todos passaram: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. 3 jobs rodaram em paralelo? ✅
+2. Cada versão foi testada? ✅
+3. O resultado mostra qual versão passou/falhou? ✅

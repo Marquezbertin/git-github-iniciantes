@@ -1,0 +1,107 @@
+# Exercício 03 — Múltiplos Arquivos
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar vários arquivos e aprendê-los a adicionar de diferentes formas ao staging.
+
+---
+
+## 🎯 Objetivo
+
+Diferenciar entre `git add` com arquivos específicos, curingas e o comando `git add .`
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar múltiplos arquivos
+```bash
+echo "Página inicial" > index.html
+echo "Estilos gerais" > styles.css
+echo "Script principal" > script.js
+echo "Leia-me" > README.txt
+```
+
+### Passo 2: Verificar status
+```bash
+git status
+```
+
+Todos os 4 arquivos devem aparecer como untracked.
+
+### Passo 3: Adicionar apenas um arquivo
+```bash
+git add index.html
+git status
+```
+
+Apenas `index.html` deve estar verde.
+
+### Passo 4: Adicionar com curinga (*.extensão)
+```bash
+git add *.css
+git status
+```
+
+Agora `index.html` e `styles.css` devem estar verdes.
+
+### Passo 5: Adicionar todos os restantes
+```bash
+git add .
+git status
+```
+
+Todos os arquivos devem estar verdes.
+
+### Passo 6: Fazer o commit
+```bash
+git commit -m "Adicionar arquivos iniciais do projeto"
+```
+
+### Passo 7: Documentar
+Crie `multiplos_arquivos.txt`:
+```
+Arquivos criados: index.html, styles.css, script.js, README.txt
+git add index.html → [quantos arquivos staged]
+git add *.css → [quantos arquivos staged no total]
+git add . → [quantos arquivos staged no total]
+Todos commitados: sim/não
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git add index.html
+$ git status
+Changes to be committed:
+  new file: index.html
+
+$ git add *.css
+$ git status
+Changes to be committed:
+  new file: index.html
+  new file: styles.css
+
+$ git add .
+$ git status
+Changes to be committed:
+  new file: index.html
+  new file: README.txt
+  new file: script.js
+  new file: styles.css
+```
+
+---
+
+## 🔍 Verificação
+
+1. Após cada `git add`, o status mostra os arquivos corretos? ✅
+2. `git add *.css` adicionou apenas arquivos CSS? ✅
+3. `git add .` adicionou todos os arquivos? ✅
+4. O commit foi realizado com todos os arquivos? ✅

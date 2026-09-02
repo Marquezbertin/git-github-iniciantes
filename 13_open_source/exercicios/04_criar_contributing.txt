@@ -1,0 +1,79 @@
+# Exercício 04 — Criar CONTRIBUTING.md
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um guia de contribuição para seu próprio projeto.
+
+---
+
+## 🎯 Objetivo
+
+Documentar como outros podem contribuir para seu projeto.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar CONTRIBUTING.md
+```markdown
+# Guia de Contribuição
+
+Obrigado por querer contribuir! Siga estas diretrizes.
+
+## Como Contribuir
+
+### Reportar Bugs
+1. Abra uma Issue com label "bug"
+2. Descreva o problema claramente
+3. Inclua passos para reproduzir
+
+### Sugerir Funcionalidades
+1. Abra uma Issue com label "enhancement"
+2. Descreva a funcionalidade
+3. Explique por que é útil
+
+### Enviar Código
+1. Fork o repositório
+2. Crie uma branch (`git checkout -b minha-feature`)
+3. Faça suas alterações
+4. Commit com mensagem clara
+5. Push para seu fork
+6. Abra um Pull Request
+
+## Regras
+- Siga o estilo do projeto
+- Uma mudança por PR
+- Escreva mensagens de commit claras
+- Teste antes de enviar
+
+## Código de Conduta
+Respeite todos os participantes.
+```
+
+### Passo 2: Commit e push
+```bash
+git add CONTRIBUTING.md
+git commit -m "Adicionar guia de contribuição"
+git push
+```
+
+### Passo 3: Documentar
+Crie `contributing_criado.txt`:
+```
+Arquivo: CONTRIBUTING.md
+Seções incluídas: [lista]
+Regras documentadas: [lista]
+Commit: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O CONTRIBUTING.md existe? ✅
+2. Tem instruções claras? ✅
+3. Cobriu diferentes tipos de contribuição? ✅

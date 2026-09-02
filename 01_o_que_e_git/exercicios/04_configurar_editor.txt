@@ -1,0 +1,87 @@
+# Exercício 04 — Configurar Editor
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Configurar o editor de texto padrão que o Git usará para mensagens de commit e outros textos.
+
+---
+
+## 🎯 Objetivo
+
+Personalizar o Git para abrir seu editor favorito ao editar mensagens de commit.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Ver o editor atual
+```bash
+git config --global core.editor
+```
+
+### Passo 2: Configurar para VS Code (recomendado)
+```bash
+git config --global core.editor "code --wait"
+```
+
+### Passo 3: Configurar para outros editores (alternativas)
+
+**Notepad++ (Windows):**
+```bash
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+
+**Vim (macOS/Linux):**
+```bash
+git config --global core.editor "vim"
+```
+
+**Nano (Linux):**
+```bash
+git config --global core.editor "nano"
+```
+
+### Passo 4: Testar a configuração
+Crie um repositório temporário e teste:
+```bash
+mkdir teste-editor
+cd teste-editor
+git init
+echo "teste" > arquivo.txt
+git add arquivo.txt
+git commit
+# O editor deve abrir automaticamente
+```
+
+### Passo 5: Documentar
+Crie `editor_configurado.txt`:
+```
+Editor configurado: [nome do editor]
+Caminho: [caminho do editor]
+Teste realizado: sim/não
+Editor abriu corretamente: sim/não
+```
+
+---
+
+## ✅ Saída esperada
+
+Ao rodar `git commit`, seu editor deve abrir automaticamente para digitar a mensagem.
+
+---
+
+## 🔍 Verificação
+
+1. `git config --global core.editor` mostra seu editor? ✅
+2. Ao testar, o editor abriu corretamente? ✅
+3. Criou o arquivo de documentação? ✅
+
+---
+
+## 💡 Dica
+
+O VS Code é recomendado porque é gratuito, leve e fácil de usar. Se preferir outro, não há problema — o importante é que funcione para você!

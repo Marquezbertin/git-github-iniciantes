@@ -1,0 +1,71 @@
+# Exercício 05 — Publicar e Documentar
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Publicar o projeto e garantir que está completamente documentado.
+
+---
+
+## 🎯 Objetivo
+
+Tornar o projeto pronto para ser encontrado e usado por outras pessoas.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Revisar README.md
+Certifique-se de que inclui:
+- Título e descrição
+- Badges (CI, licença)
+- Como instalar
+- Como usar
+- Estrutura do projeto
+- Contribuindo
+- Licença
+
+### Passo 2: Merge develop → main
+```bash
+git checkout main
+git merge develop
+git push origin main
+```
+
+### Passo 3: Criar release no GitHub
+```bash
+gh release create v1.0.0 --title "Versão 1.0.0" --notes "Versão inicial do projeto"
+```
+
+### Passo 4: Adicionar topics
+No GitHub, adicione topics ao repositório:
+`git`, `github`, `iniciantes`, `educacao`, `laboratorio-tech-social`
+
+### Passo 5: Ativar GitHub Pages (opcional)
+Se o projeto tem site, configure conforme Módulo 09.
+
+### Passo 6: Documentar
+Crie `publicado.txt`:
+```
+=== PROJETO PUBLICADO ===
+
+Versão: 1.0.0
+Release: [URL]
+Topics: [lista]
+CI funcionando: sim/não
+README completo: sim/não
+URL do repositório: [url]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O README está completo e profissional? ✅
+2. A release foi criada? ✅
+3. Os topics foram adicionados? ✅
+4. O repositório está público? ✅
+5. Documentou tudo? ✅

@@ -1,0 +1,60 @@
+# Exercício 05 — Extensões VS Code
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Instalar e configurar extensões Git no VS Code.
+
+---
+
+## 🎯 Objetivo
+
+Potencializar o VS Code com extensões para Git e GitHub.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Instalar extensões
+Via terminal:
+```bash
+code --install-extension eamodio.gitlens
+code --install-extension GitHub.vscode-pull-request-github
+code --install-extension mhutchie.git-graph
+```
+
+### Passo 2: GitLens
+1. Abra um arquivo
+2. Veja o blame na lateral (quem escreveu cada linha)
+3. Clique em uma linha para ver o commit
+
+### Passo 3: GitHub Pull Requests
+1. Abra o painel lateral
+2. Veja PRs abertos
+3. Crie, comente e faça merge de PRs
+
+### Passo 4: Git Graph
+1. Abra o Git Graph (ícone no status bar)
+2. Veja o histórico como grafo visual
+3. Clique em commits para ver detalhes
+
+### Passo 5: Documentar
+Crie `extensoes_git.txt`:
+```
+Extensões instaladas:
+- GitLens: [funcionalidades testadas]
+- GitHub PRs: [funcionalidades testadas]
+- Git Graph: [funcionalidades testadas]
+Mais útil: [qual e por quê]
+```
+
+---
+
+## 🔍 Verificação
+
+1. GitLens mostra blame? ✅
+2. GitHub PRs lista PRs? ✅
+3. Git Graph mostra histórico? ✅

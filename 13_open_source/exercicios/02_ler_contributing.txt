@@ -1,0 +1,56 @@
+# Exercício 02 — Ler CONTRIBUTING.md
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Ler e entender o CONTRIBUTING.md de um projeto open source.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a seguir as regras de contribuição de cada projeto.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Escolher um projeto
+Use o projeto encontrado no exercício anterior.
+
+### Passo 2: Ler CONTRIBUTING.md
+```bash
+# No repositório do projeto
+cat CONTRIBUTING.md
+# Ou visualize no GitHub
+```
+
+### Passo 3: Responder perguntas
+Crie `contribuindo_lido.txt`:
+```
+Projeto: [nome]
+CONTRIBUTING existe: sim/não
+Branch naming: [regra]
+Commit convention: [regra]
+PR template: [sim/não]
+License: [tipo]
+Como reportar bug: [método]
+Como sugerir feature: [método]
+```
+
+### Passo 4: Verificar se há CODE_OF_CONDUCT
+```bash
+cat CODE_OF_CONDUCT.md
+```
+
+---
+
+## 🔍 Verificação
+
+1. Você leu o CONTRIBUTING.md? ✅
+2. Entendeu as regras de branch? ✅
+3. Sabe como reportar bugs? ✅
+4. Criou o arquivo de análise? ✅

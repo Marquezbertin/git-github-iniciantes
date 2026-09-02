@@ -1,0 +1,92 @@
+# Exercício 03 — Merge Fast-Forward
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar merge com fast-forward: quando a branch ahead não tem commits próprios após divergir.
+
+---
+
+## 🎯 Objetivo
+
+Entender quando um fast-forward happen e como ele preserva o histórico linear.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário
+```bash
+mkdir merge-ff
+cd merge-ff
+git init
+
+echo "Base" > arquivo.txt
+git add . && git commit -m "Commit base"
+```
+
+### Passo 2: Criar branch e adicionar commits
+```bash
+git checkout -b feature
+echo "Feature 1" >> arquivo.txt
+git add . && git commit -m "Adicionar feature 1"
+echo "Feature 2" >> arquivo.txt
+git add . && git commit -m "Adicionar feature 2"
+```
+
+### Passo 3: Voltar para main e fazer merge
+```bash
+git checkout main
+git merge feature
+```
+
+### Passo 4: Verificar
+```bash
+git log --oneline --graph
+cat arquivo.txt
+```
+
+### Passo 5: Limpar branch
+```bash
+git branch -d feature
+git log --oneline
+```
+
+### Passo 6: Documentar
+Crie `merge_ff.txt`:
+```
+Commits na feature: 2 (Adicionar feature 1, Adicionar feature 2)
+Tipo de merge: [Fast-forward ou Merge commit]
+Histórico final: [linear ou com branch visual]
+Arquivo final contém: [todo o conteúdo]
+Branch feature deletada: sim/não
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git merge feature
+Updating abc1234..def5678
+Fast-forward
+ arquivo.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+$ git log --oneline
+def5678 Adicionar feature 2
+abc1234 Adicionar feature 1
+7890123 Commit base
+```
+
+---
+
+## 🔍 Verificação
+
+1. O merge foi fast-forward? ✅
+2. O histórico ficou linear? ✅
+3. Todo o conteúdo está no arquivo? ✅
+4. A branch foi limpa corretamente? ✅

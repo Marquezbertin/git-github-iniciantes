@@ -1,0 +1,61 @@
+# Exercício 04 — Project Board
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar um quadro Kanban com GitHub Projects e gerenciar Issues visualmente.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a usar GitHub Projects para organizar o trabalho como uma equipe real.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar Project
+1. Aba "Projects" → "New project"
+2. Nome: "Git para Iniciantes - Kanban"
+3. Template: "Basic Kanban"
+4. "Create project"
+
+### Passo 2: Configurar colunas
+Padrão já vem com:
+- Todo
+- In progress
+- Done
+
+Adicione:
+- "In Review"
+
+### Passo 3: Adicionar Issues ao board
+1. Clique em "+ Add item"
+2. Selecione Issues existentes
+3. Ou crie novas diretamente
+
+### Passo 4: Mover itens entre colunas
+1. Arraste um card de "Todo" para "In progress"
+2. Quando terminar, mova para "Done"
+
+### Passo 5: Documentar
+Crie `kanban_configurado.txt`:
+```
+Project: Git para Iniciantes - Kanban
+Colunas: [lista]
+Issues adicionadas: [quantidade]
+Status do projeto: [descrição]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O Project foi criado? ✅
+2. As colunas estão configuradas? ✅
+3. Issues estão nos cards? ✅
+4. É possível mover cards? ✅

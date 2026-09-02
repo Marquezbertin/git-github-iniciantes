@@ -1,0 +1,68 @@
+# Exercício 01 — Criar Repositório
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Criar o repositório do projeto final no GitHub com configurações iniciais.
+
+---
+
+## 🎯 Objetivo
+
+Iniciar o projeto com estrutura Git completa.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório no GitHub
+```bash
+gh repo create meu-projeto-final --public --description "Projeto final do curso de Git e GitHub"
+```
+
+### Passo 2: Clonar
+```bash
+git clone https://github.com/SEU-USUARIO/meu-projeto-final.git
+cd meu-projeto-final
+```
+
+### Passo 3: Configurar Git Flow básico
+```bash
+git checkout -b develop
+```
+
+### Passo 4: Criar commits iniciais
+```bash
+echo "# Meu Projeto Final" > README.md
+git add . && git commit -m "Adicionar README inicial"
+
+echo "# Guia" > docs/guia.md
+git add . && git commit -m "Adicionar documentação inicial"
+```
+
+### Passo 5: Criar tag
+```bash
+git tag -a v0.1.0 -m "Versão inicial do projeto"
+```
+
+### Passo 6: Documentar
+Crie `repositorio_criado.txt`:
+```
+Nome: meu-projeto-final
+URL: [url]
+Branch main: [commits]
+Branch develop: [commits]
+Tag: v0.1.0
+```
+
+---
+
+## 🔍 Verificação
+
+1. O repositório existe no GitHub? ✅
+2. A branch develop foi criada? ✅
+3. Pelo menos 2 commits foram feitos? ✅
+4. A tag foi criada? ✅

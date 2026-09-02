@@ -1,0 +1,111 @@
+# Exercício 01 — Criar Site Básico
+
+## Dificuldade: Fácil 🟢
+
+---
+
+## 📋 Descrição
+
+Criar um site HTML simples com index.html e estilos CSS.
+
+---
+
+## 🎯 Objetivo
+
+Criar a estrutura básica de um site para hospedar no GitHub Pages.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar repositório
+```bash
+mkdir meu-primeiro-site
+cd meu-primeiro-site
+git init
+```
+
+### Passo 2: Criar index.html
+```bash
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Olá, mundo!</h1>
+        <p>Meu primeiro site no GitHub Pages</p>
+    </header>
+    <main>
+        <h2>Sobre mim</h2>
+        <p>Estou aprendendo a criar sites com HTML e CSS.</p>
+        <h2>Projetos</h2>
+        <ul>
+            <li>Git e GitHub para Iniciantes</li>
+            <li>Meu primeiro site</li>
+        </ul>
+    </main>
+    <footer>
+        <p>Feito com ❤️ por [seu nome]</p>
+    </footer>
+</body>
+</html>
+EOF
+```
+
+### Passo 3: Criar styles.css
+```bash
+cat > styles.css << 'EOF'
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 10px;
+}
+h1 { margin: 0; }
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+EOF
+```
+
+### Passo 4: Commit e push
+```bash
+git add .
+git commit -m "Site inicial com HTML e CSS"
+git remote add origin https://github.com/USUARIO/meu-primeiro-site.git
+git push -u origin main
+```
+
+### Passo 5: Documentar
+Crie `site_criado.txt`:
+```
+Arquivos criados: index.html, styles.css
+Páginas: 1 (index.html)
+Commit realizado: sim/não
+```
+
+---
+
+## 🔍 Verificação
+
+1. O index.html foi criado? ✅
+2. O styles.css foi criado? ✅
+3. O HTML referencia o CSS? ✅
+4. O commit foi realizado? ✅

@@ -1,0 +1,141 @@
+# Exercício 06 — Desafio Completo
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Simular o fluxo completo de trabalho de um projeto real: criar repositório, múltiplos commits, verificar status, explorar histórico e documentar tudo.
+
+---
+
+## 🎯 Objetivo
+
+Consolidar todos os comandos do módulo em um cenário realista.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar o projeto "Laboratório Tech Social"
+```bash
+mkdir laboratorio-tech-social
+cd laboratorio-tech-social
+git init
+```
+
+### Passo 2: Estrutura do projeto
+```bash
+echo "# Laboratório Tech Social" > README.md
+echo "Bem-vindo ao Laboratório!" >> README.md
+echo "" >> README.md
+echo "Projetos:" >> README.md
+echo "- Python para Iniciantes" >> README.md
+echo "- Git e GitHub para Iniciantes" >> README.md
+
+echo "LICENSE" > LICENSE
+echo "MIT License" > LICENSE
+
+mkdir docs
+echo "Guia de Contribuição" > docs/CONTRIBUTING.md
+
+mkdir src
+echo "# Código Principal" > src/main.py
+```
+
+### Passo 3: Fazer commits separados para cada grupo
+```bash
+# Commit 1: README
+git add README.md
+git commit -m "Adicionar README principal do projeto"
+
+# Commit 2: Licença
+git add LICENSE
+git commit -m "Adicionar licença MIT"
+
+# Commit 3: Documentação
+git add docs/
+git commit -m "Adicionar guia de contribuição"
+
+# Commit 4: Código
+git add src/
+git commit -m "Adicionar estrutura inicial de código"
+```
+
+### Passo 4: Modificar arquivos e commitar
+```bash
+echo "- HTML e CSS para Iniciantes" >> README.md
+git add README.md
+git commit -m "Adicionar projeto HTML e CSS à lista"
+
+echo "# Função principal" >> src/main.py
+git add src/
+git commit -m "Adicionar função principal ao módulo"
+```
+
+### Passo 5: Verificar o estado final
+```bash
+git status
+git log --oneline --graph
+git log --stat
+```
+
+### Passo 6: Criar relatório final
+Crie `relatorio_final.txt`:
+```
+=== RELATÓRIO DO PROJETO ===
+
+Projeto: Laboratório Tech Social
+Total de commits: [número]
+
+HISTÓRICO:
+[hash1] [mensagem 1]
+[hash2] [mensagem 2]
+[hash3] [mensagem 3]
+[hash4] [mensagem 4]
+[hash5] [mensagem 5]
+[hash6] [mensagem 6]
+
+ARQUIVOS FINAIS:
+- README.md: [número de linhas]
+- LICENSE: [número de linhas]
+- docs/CONTRIBUTING.md: [número de linhas]
+- src/main.py: [número de linhas]
+
+STATUS: Repositório limpo e organizado ✅
+```
+
+---
+
+## ✅ Saída esperada
+
+```
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+$ git log --oneline --graph
+* def7890 Adicionar função principal ao módulo
+* abc6789 Adicionar projeto HTML e CSS à lista
+* 1234567 Adicionar estrutura inicial de código
+* 89abcdef Adicionar guia de contribuição
+* 5678901 Adicionar licença MIT
+* 1234567 Adicionar README principal do projeto
+```
+
+---
+
+## 🔍 Verificação
+
+1. 6 commits foram realizados? ✅
+2. Cada commit tem uma mensagem clara e descritiva? ✅
+3. `git status` mostra "working tree clean"? ✅
+4. A estrutura de pastas está correta? ✅
+5. Criou o relatório final? ✅
+
+---
+
+## 🎉 Parabéns!
+
+Você dominou os comandos básicos do Git! Está pronto para o Módulo 03.

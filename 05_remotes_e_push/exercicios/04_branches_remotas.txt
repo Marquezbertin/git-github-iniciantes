@@ -1,0 +1,62 @@
+# Exercício 04 — Branches Remotas
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Gerenciar branches que existem tanto local quanto remotamente.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a criar, enviar, rastrear e limpar branches remotas.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar branch local e enviar
+```bash
+git checkout -b feature-nova
+echo "Feature nova" > feature.txt
+git add . && git commit -m "Adicionar feature nova"
+git push -u origin feature-nova
+```
+
+### Passo 2: Ver branches remotas
+```bash
+git branch -a
+```
+
+### Passo 3: Deletar branch remota
+```bash
+git push origin --delete feature-nova
+git branch -a
+```
+
+### Passo 4: Sincronizar branches deletadas
+```bash
+git fetch --prune
+git branch -a
+```
+
+### Passo 5: Documentar
+Crie `branches_remotas.txt`:
+```
+Branch criada: feature-nova
+Enviada com: git push -u origin feature-nova
+Deletada remotamente: sim/não
+Commits na branch: [número]
+```
+
+---
+
+## 🔍 Verificação
+
+1. A branch aparece em `git branch -a`? ✅
+2. Após push, está no GitHub? ✅
+3. Após delete, sumiu da lista? ✅
+4. `git fetch --prune` limpa referências obsoletas? ✅

@@ -1,0 +1,94 @@
+# Exercício 05 — Deploy com GitHub Actions
+
+## Dificuldade: Difícil 🔴
+
+---
+
+## 📋 Descrição
+
+Configurar deploy automático usando GitHub Actions para um site estático.
+
+---
+
+## 🎯 Objetivo
+
+Aprender a usar GitHub Actions para publicar automaticamente.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar pasta de workflows
+```bash
+mkdir -p .github/workflows
+```
+
+### Passo 2: Criar workflow de deploy
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+```
+
+### Passo 3: Configurar Pages para GitHub Actions
+1. Settings → Pages
+2. Source: "GitHub Actions"
+
+### Passo 4: Push e verificar
+```bash
+git add .github/
+git commit -m "Configurar deploy via GitHub Actions"
+git push
+```
+
+### Passo 5: Verificar o workflow
+1. Aba "Actions" do repositório
+2. Veja o workflow rodando
+3. Aguarde concluir (verde = sucesso)
+
+### Passo 6: Documentar
+Crie `actions_config.txt`:
+```
+Workflow: deploy.yml
+Trigger: push na main
+Runner: ubuntu-latest
+Actions usadas: checkout, configure-pages, upload-pages-artifact, deploy-pages
+Status: [sucesso/erro]
+URL do site: [url]
+```
+
+---
+
+## 🔍 Verificação
+
+1. O workflow foi criado? ✅
+2. A Pasta .github/workflows existe? ✅
+3. O workflow aparece na aba Actions? ✅
+4. O deploy foi bem-sucedido? ✅
+5. O site está acessível? ✅

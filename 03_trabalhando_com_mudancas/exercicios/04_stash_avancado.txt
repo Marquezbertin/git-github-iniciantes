@@ -1,0 +1,83 @@
+# Exercício 04 — Stash Avançado
+
+## Dificuldade: Médio 🟡
+
+---
+
+## 📋 Descrição
+
+Praticar operações avançadas com stash: múltiplos stashes, nomes, aplicação parcial e limpeza.
+
+---
+
+## 🎯 Objetivo
+
+Gerenciar múltiplos stashes simultaneamente e entender as diferentes opções de restauração.
+
+---
+
+## 📝 Passo a passo
+
+### Passo 1: Criar cenário com múltiplas tarefas
+```bash
+mkdir stash-avancado
+cd stash-avancado
+git init
+
+echo "Projeto" > projeto.txt
+git add . && git commit -m "Projeto base"
+```
+
+### Passo 2: Criar múltiplos stashes
+```bash
+# Tarefa 1
+echo "Feature A" >> projeto.txt
+git stash push -m "Stash da Feature A"
+
+# Tarefa 2
+echo "Bugfix B" >> projeto.txt
+git stash push -m "Stash do Bugfix B"
+
+# Tarefa 3
+echo "Experimento C" >> projeto.txt
+git stash push -m "Stash do Experimento C"
+```
+
+### Passo 3: Listar todos
+```bash
+git stash list
+```
+
+### Passo 4: Aplicar stash específico (sem remover)
+```bash
+git stash apply stash@{1}
+cat projeto.txt
+git stash drop stash@{0}
+```
+
+### Passo 5: Limpar todos
+```bash
+git stash clear
+git stash list
+```
+
+### Passo 6: Documentar
+Crie `stash_avancado.txt`:
+```
+Quantos stashes criados: 3
+Stash 0: Feature A
+Stash 1: Bugfix B
+Stash 2: Experimento C
+Aplicar stash@{1}: [funcionou?]
+Stash removido: [qual]
+Após clear: [quantos restaram]
+```
+
+---
+
+## 🔍 Verificação
+
+1. 3 stashes foram criados com nomes? ✅
+2. `git stash list` mostrou todos? ✅
+3. Aplicar stash@{1} funcionou? ✅
+4. `git stash clear` removeu todos? ✅
